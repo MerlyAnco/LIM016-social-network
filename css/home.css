@@ -1,0 +1,411 @@
+.container-home{
+    width: 100%;
+    padding-bottom: 7em;
+    background-image: linear-gradient(to bottom, #e0f5ff 0%, #FFFFFF 100%);
+    min-height: 100vh;
+    padding-top: 1em;
+}
+
+
+/* -----WELCOME TO USER----- */
+
+.header-home{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.photoHome{
+    margin: 12px 0;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+}
+.header-text{
+    display: flex;
+    flex-direction: column;
+    padding-left: 17px;
+    line-height: 0.9cm;
+    align-items: flex-start;
+    margin-bottom: 14px;
+}
+.header-text h{
+    font-size: 17px;
+}
+.header-text p{
+    font-size: 25px;
+    line-height: 20px;
+    text-align: start;
+    text-transform: capitalize;
+    color: #356fecfa;
+}
+
+
+/* -----SECTION DE DESCRIPTION OF USER----- */
+
+#sectionDescription{
+    padding: 8px;
+    display: none;
+    flex-direction: column;
+    width: 100%;
+}
+#sectionDescription h1{
+    font-size: 17px;
+    font-weight: bold;
+    color: #484860;
+    margin: 8px 0px;
+}
+
+#infoDescription{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    line-height: 1.8;
+    width: 100%;
+}
+#infoDescription > p{
+    font-size: 14px;
+    line-height: 1.2;
+    margin-bottom: 5px;
+}
+
+#div-etiqueta{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-top: 6px;
+}
+#div-etiqueta p{
+    width: auto;
+    border: transparent;
+    background: rgb(156 171 246 / 78%);
+    border-radius: 13px;
+    padding: 1px 5px;
+    font-size: 12px;
+    /* margin: 2px 5px; */
+    margin-right: 5px;
+    margin-block-end: 5px;
+    color: white;
+    text-transform: capitalize;
+}
+
+/* -----SECTION OTHER USERS----- */
+
+#divParent-users{   
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    border-top: 2px solid #94A4F5;
+    padding: 8px;
+}
+#divParent-users h1{
+    font-size: 17px;
+    font-weight: bold;
+    color: #484860;
+    margin: 8px auto;
+}
+
+#sectionUsers{
+    overflow-y: scroll;
+    display: none;
+    width: 100%;
+    height: 240px;
+}
+#section-User{
+    width: 100%;
+    order: -2;
+}
+
+.container-info-users{
+    /* position: fixed; */
+    /* width: 23%; */
+    /* padding: 10px; */
+    /* background-image: linear-gradient(to bottom, #BEBDFF 0%, #C6FCFF 100% ); */
+    border: transparent;
+    /* border-radius: 20px; */
+    top: 6em;
+    bottom: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.divUsers {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
+.oneDivUser:hover{
+    background-color: #356fec44;
+    border-radius: 8px;
+    transition: all 0.1s linear;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.oneDivUser {
+    display: flex;
+    flex-direction: row;
+    /* background: cornflowerblue; */
+    justify-content: flex-start;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+    padding: 4px;
+}
+.link-user {
+    width: 100%;
+}
+.img-user {
+    width: 28px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 5%;
+}
+.oneDivUser-parrafo {
+    font-size: 14px;
+    text-align: start !important;
+}
+
+/* -----BUTTON FOR CREATE A NEW POST----- */
+
+#btn-newPost{
+    display: none;
+    height: 40px;
+    width: 9em;
+    border-radius: 15px;
+    border: transparent;
+    background-image: linear-gradient(120deg, #da5afa73 0%, #3570ec52 100%);
+    color: white;
+    font-size: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+#btn-newPost:hover,
+#goEdit:hover,
+.save:hover{
+    border: 1.5px transparent;
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    color: #6CC5DE;
+    box-shadow: 1px 1px 2px 1px #8888;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* -----SECTION TYPES OF POST----- */
+
+.sectionTypes{
+    order: -1;
+}
+
+#header-categories{
+    display: flex;
+    justify-content: space-around;
+}
+#header-categories p{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#todos{
+    color: #3570EC;
+    cursor:pointer;
+}
+
+#todos:hover{
+    color: rgb(159 165 239);
+    cursor: pointer;
+}
+
+#botones-types{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+.div-type{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0px;
+    position: relative;
+}
+.img-types{
+    width: 90%;
+    border-radius: 9px;
+    height: 30px;
+}
+
+.btn-type{
+    background: #ebf9ffa6;
+    width: 90%;
+    height: 100%;
+    cursor: pointer;
+    position: absolute;
+    border: transparent;
+} 
+.btn-type{
+    font-size: 15px;
+    /* font-weight: 700; */
+    font-family: 'Outfit';
+}
+
+.activeCategory,
+.btn-type:hover{
+    background: #2d2e2e7a;
+    color: white;
+    font-weight: bold;
+    border-radius: 9px;
+}
+
+.section-home{
+    display: flex;
+    flex-direction: column;
+    width: 96%;
+    justify-content: space-around;
+    margin: auto;
+}
+
+#divParent-users{   
+    /* padding: 7% 10px; */
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    /* margin-left: 10px; */
+    width: 100%;
+    border-top: 2px solid #94A4F5;
+    padding-top: 7%;
+}
+
+#divParent-users h1{
+    font-size: 17px;
+    font-weight: bold;
+    color: #484860;
+    margin: 8px 0px;
+    font-size: 19px;
+}
+
+#sectionUsers{
+    display: none;
+    width: 100%;
+}
+
+#section-User{
+    width: 100%;
+    order: -2;
+}
+.container-info-users{
+        /* position: fixed; */
+    /* width: 23%; */
+    /* padding: 10px; */
+    /* background-image: linear-gradient(to bottom, #BEBDFF 0%, #C6FCFF 100% ); */
+    border: transparent;
+    /* border-radius: 20px; */
+    top: 6em;
+    bottom: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+#header-categories{
+    display: flex;
+    justify-content: space-between;
+}
+#header-categories p{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#botones-types{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+.categoryMobile{
+    padding: 0px 2.5%;
+}
+
+@media (min-width: 768px){
+    .container-home{
+        padding-top: 7em;
+    }
+    .section-home{
+        flex-direction: row;
+        width: 100%;
+    }
+    #btn-newPost{
+        display: block !important;
+        width: 96%;
+    }
+    .header-home{
+        display: flex;
+        /* justify-content: center; */
+        align-items: center;
+        padding: 0px 2.5%;
+        border-bottom: 2px solid #94A4F5;
+    }
+    #section-User{
+        width: 23%;
+        position: relative;
+    }
+    .container-info-users{
+        position: fixed;
+        width: 23%;
+        padding: 10px;
+        /* background-image: linear-gradient(to bottom, #BEBDFF 0%, #C6FCFF 100% ); */
+        border: transparent;
+        /* border-radius: 20px; */
+        top: 6em;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+    #sectionUsers{
+        display: block;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+    .sectionTypes{
+        width: 23%;
+        position: relative;
+        display: block;
+        order: initial;
+    }
+    #sectionDescription{
+        display: flex;
+        align-items: flex-start;
+    }
+    #divParent-users{
+        display: flex;
+    }
+    #header-categories{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #botones-types{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .img-types{
+        width: 90%;
+        border-radius: 9px;
+        height: 90px;
+    }
+    .btn-type{
+        font-size: 20px;
+        /* font-weight: 700; */
+        font-family: 'Outfit';
+    }
+}

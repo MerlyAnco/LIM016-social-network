@@ -1,0 +1,278 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+  
+body {
+    background-image: linear-gradient(to bottom, #bebdff 0%, #c6fcff 100%);
+    font-family: "Outfit", sans-serif;
+}
+  
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+#container div {
+    text-align: center;
+}
+  
+/* ESTILO A LA VISTA 1*/
+#logoLogin {
+    width: 300px;
+}
+  #inicioLogo{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 15px auto;
+}
+.logo {
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight: 900;
+    color: white;
+    line-height : 20px;
+}
+#inicioLogo > i{
+    color: white !important;
+    font-size: 18px;
+    align-self: flex-start;
+    margin-left: 5px;
+}
+#botonesLogin {
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: row;
+}
+  
+#login-form input,
+#signup-form input,
+.input-reset{
+    height: 40px;
+    width: 75%;
+    border-radius: 20px;
+    margin: 6px 0px;
+    padding-left: 10px;
+    border: 1.5px transparent;
+    background: #6CC5DE;
+    color: white;
+    font-size: 14px;
+    box-shadow: 1px 1px 2px 1px #8888;
+}
+  
+.btnLogin{  
+    height: 40px;
+    width: 75%;
+    border-radius: 15px;
+    margin: 10px 0px 6px 0px;
+    padding-left: 10px;
+    border: 1.5px transparent;
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    color: #6CC5DE;
+    font-size: 14px;
+    box-shadow: 1px 1px 2px 1px #8888;
+    font-weight: bold;
+}
+.form-group{
+    position:relative;
+}
+.form-group > input:focus{
+    outline: none;
+    box-shadow: 0px 0px 0.2px 2px #356fec44;
+}
+.icon-input{
+    position: absolute;
+    right: calc(100% - 80%);
+    top: 50%;
+    transform: translateY(-50%);
+}
+  
+.form-group-text{
+    display: flex;
+    justify-content: space-around;
+    width: 75%;
+    outline: none;
+    margin-left: 12.5%;
+}
+  
+.textForm{
+    border-bottom: 2px solid rgb(255, 255, 255);
+    width: 50%;
+    padding: 6px 0px;
+    margin-bottom: 15px;
+}
+  
+.clickLogin{
+    border-bottom: 2px solid #1774FF !important;
+    font-weight: 900;
+}
+  
+.clickSingUp{
+    border-bottom: 2px solid #1774FF !important;
+    font-weight: 900;
+}
+  
+.textForm a{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+  
+.icon-login{
+    background: white;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: fit-content;
+    cursor: pointer;
+}
+.divResetPassword{    
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 12px;
+}
+  
+#resetPass{
+    font-size: 12px;
+    padding-right: 0px;
+    text-decoration: none;
+    color: #286FFB;
+}  
+.registerText{
+    font-size: 13px;
+    text-decoration: none;
+    color: #286FFB;
+    padding-top: 7px;
+}
+.link{
+    text-decoration: underline;
+}
+.link:hover { 
+    font-weight: bold;
+}    
+p.errorMessage{
+    font-size: 12px;
+    color: rgb(173, 72, 72);
+}  
+  
+ 
+/*VISTA DE RESETEO*/
+#resetPasswordBtn{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 0.6cm;
+}  
+.textReset{
+    padding-bottom: 15px;
+}  
+.backLogin{
+    padding-top: 10%;
+    color: #286FFB;
+}
+  
+.backLogin a{
+    text-decoration: none;
+    color: #286FFB;
+}
+.backLogin:hover{
+    color: #1f4da9;
+    font-weight: bold;
+}
+
+/* VISTA DEL MODAL DE RESET*/
+.modalReset{
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(44, 44, 44, 0.371);
+    position: absolute;
+    left: 0;
+    top:0;
+}
+.modalDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}
+.modalDiv #far{
+    text-align: end;
+    padding-right: 14px;
+    padding-top: 10px;
+    font-size: 21px;
+}
+.modalContainer{
+    background: aliceblue;
+    width: 90%;
+    height: max-content;
+    border-radius: 20px;
+    box-shadow: 0px 0px 6px 3px #46464673;
+}
+  
+.modalContainer h1{
+    color: #286FFB;
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 1.3cm;
+}
+  
+.modal-parrafo{
+    padding-bottom: 12px;
+    width: 90%;
+    margin: auto;
+    line-height: 0.7cm;
+}
+.emailText{
+    color: #18449b;
+}
+  
+.aceptReset{
+    height: 40px;
+    width: 146px;
+    border-radius: 15px;
+    margin: 10px 0px 25px 0px;
+    padding-left: 10px;
+    border: 1.5px transparent;
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    color: #6CC5DE;
+    font-size: 14px;
+    box-shadow: 1px 1px 2px 1px #8888;
+    font-weight: bold;
+}
+  
+.aceptReset a{
+    text-decoration: none;
+    color: cornflowerblue;
+}
+
+@media (min-width: 767px){
+    .logo {
+      font-size: 40px;
+    }
+    #inicioLogo > i{
+        font-size: 24px;
+        padding-bottom: 5px;
+        margin-left: 3px;
+    }
+}
+@media (min-width: 800px){
+    #inicioLogo{
+        width: 385px;
+        margin: 30px auto;
+      }
+}
+@media (max-width: 290px){
+      .logo {
+        font-size: 28px;
+      }
+      #inicioLogo > i{
+        margin-left: 15px;
+      }
+}

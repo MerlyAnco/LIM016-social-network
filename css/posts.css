@@ -1,0 +1,282 @@
+/* -----CONTAINER POSTS----- */
+
+.div-showPost{
+    width: 100%;
+    /* margin: 0px 4%; */
+}
+#showPost, #PostProfile{
+    margin: 0px 2.5%;
+    /* width: 95%; */
+}
+
+/* -----INF OF PUBLICATION----- */
+
+.postDiv{
+    position: relative;
+   /*  background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%); */
+    margin: 14px 0px;
+    border-radius: 6px;
+    background: #ffffff75;
+    box-shadow: 0px 0px 3px 1px rgb(163 163 163 / 45%);
+}
+
+.header-post{
+    display: flex;
+    border-bottom: 0.5px solid #c3c3c3;
+    align-items: center;
+    padding: 2px 4px;
+}
+.header-post img{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+.header-info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    margin-left: 8px;
+}
+.post-name, .namePost{
+    font-size: 16px;
+    width: auto;
+    text-align: start !important;
+    margin: 5px 0;
+    cursor: pointer;
+}
+.date{
+    font-size: 12px;
+    color: gray;
+}
+
+/* -----CONTENT POST----- */
+
+.img-post-home{
+    width: 100%;
+    object-fit: fill;
+    height: 180px;
+    padding: 4px;
+}
+
+.text-post-home{
+    display: flex;
+    align-items: center;
+    text-align: start !important;
+    margin: 10px 20px;
+    font-size: 15px;
+}
+
+/* -----OPTIONS POST----- */
+
+.icon-options-comment{
+    padding: 5px;
+}
+.icon-options{
+    margin-left: auto;
+    padding-left: 1em;
+    cursor:pointer;
+    /* padding-left: 0.5em; */
+    display: flex;
+    flex-direction: row;
+}
+
+.nameType{
+    background-image: linear-gradient(-20deg, #00cdac 0%, #8ddad5 100%);   
+        width: 5em;
+    border-radius: 15px;
+    /* background-image: linear-gradient(
+120deg, #da5afa99 0%, #3570ec8a 100%); */
+    color: beige;
+    font-size: 16px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.div-options{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 1%;
+    margin-top: 5%;
+    align-items: flex-end;
+}
+.box-options{
+    background-image: linear-gradient(to bottom, #e0f5ff 35%, #FFFFFF 100%);
+    box-shadow: 1px 1px 5px 0px lightgrey;
+    border: 1px solid gray;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    margin-right: 14px;
+}
+.content-icon{
+    margin: 6px;
+}
+
+.box-options .fas,
+.box-options .far{
+    margin-right: 6px;
+}
+.show{
+    display: flex !important;
+}
+
+/* -----EDIT POST----- */
+
+.editPost{
+    width: 87%;
+    height: 35px;
+    margin-right: 9px;
+    border-radius: 8px;
+    border: 0.5px solid #bfbebe;
+    padding: 0.1em 0.5em 0.1em 0.5em;
+}
+
+.edit:hover,
+.delete:hover{
+    cursor:pointer;
+    box-shadow: 0px 0px 2px 1px #c5bef1;
+    border-radius: 2px;
+}
+.save{
+    height: 23px;
+    width: 54px;
+    border-radius: 9px;
+    border: transparent;
+    background-image: linear-gradient(120deg, #da5afa99 0%, #3570ec8a 100%);
+    color: beige;
+    font-size: 12px;
+    margin-right: auto;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+/* -----DELETE POST MODAL----- */
+
+.modalDelete{
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(44, 44, 44, 0.371);
+    z-index: 1000;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+}
+
+.modalDivDelete{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}
+
+.modalContainer-Delete{
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to bottom, #bebdff 0%, #c6fcff 100%);
+    width: 500px;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 6px 3px #46464673;
+}
+
+#closeDelete{
+    text-align: end !important;
+    margin: 7px 13px;
+    font-size: 20px;
+}
+
+.modalContainer-Delete h1{
+    border-bottom: 1px solid #adadad;
+    border-radius: 9px;
+    padding-bottom: 6px;
+    margin-bottom: 9px;
+}
+.aceptDelete{
+    height: 40px;
+    width: 146px;
+    border-radius: 15px;
+    margin: 10px 0px 25px 0px;
+    padding-left: 10px;
+    border: 1.5px transparent;
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    color: #6CC5DE;
+    font-size: 14px;
+    box-shadow: 1px 1px 2px 1px #8888;
+    font-weight: bold;
+}
+.revelar{
+    display: flex !important;
+}
+
+/* -----LIKE AND COMMENT POST----- */
+
+#postIcons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.1em;
+    padding-left: 0.5em;
+    border-bottom: 0.5px solid #c1c1c1;
+}
+
+.likes, .comments {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    align-items: center;
+    margin-right: 18px;
+}
+.likes{
+    margin-left: 0.5em;
+}
+.comments{
+    margin-left: 1.5em;
+}
+
+.icon{
+    margin: 0.5em;
+    cursor: pointer;
+}
+.fa-heart{
+    color: deeppink;
+}
+
+.fa-comment{
+    color: #3D3DF2;
+}
+.amount{
+    font-size: 12px;
+}
+
+.privacityIcons {
+    padding: 10px;
+    color: lightslategray;
+}
+
+/*types*/
+.amigos{
+    background: yellow;
+} 
+.solo yo{
+    
+}
+@media (min-width: 768px){
+    .img-post-home{
+        height: auto;
+        width: 100%;
+    }
+    .div-showPost{
+        width: 50%;
+        /* margin: 0px 4%; */
+    }
+    #showPost{
+        width: 100%;
+        margin: 0px;
+    }    
+}

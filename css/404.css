@@ -1,0 +1,20 @@
+.containerError{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+color: white;
+    margin: auto;
+}
+#error{
+ background: none;
+  margin: 10px;
+  padding: 10px;
+  font-size: 25px;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+#imgError{
+    content: url("../img/404.png");
+    width: 100%;
+}

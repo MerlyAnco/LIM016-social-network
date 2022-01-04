@@ -1,0 +1,237 @@
+.modalEditProfile{
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(44, 44, 44, 0.371);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index:1;
+}
+
+.modalDiv-editProf{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}
+
+.modalContainer-edit{
+    background-image: linear-gradient(to bottom, #bebdff 0%, #c6fcff 100%);
+    width: 100%;
+    height: 100%;
+    /* border-radius: 20px; */
+    box-shadow: 0px 0px 6px 3px #46464673;
+}
+
+.form-editProfile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 2.5%;
+}
+
+.form-editProfile div{
+    display: flex;
+    flex-direction: column;
+}
+
+.header-editProfile{
+    width: 100%;
+    padding: 6px 0px;
+    border-bottom: 2px solid rgb(171, 106, 255);
+    position: relative;
+    /* border-radius: 12px; */
+}
+
+.header-editProfile h1{
+    font-weight: bold;
+    font-size: 23px;
+}
+
+#closeEdit{
+    position: absolute;
+    right: 0%;
+    top: 0px;
+    color: rgb(158, 106, 255);
+    font-size: 22px;
+}
+
+.container-infoEdit{
+    align-items: center;
+    width: 100%;
+    padding-top: 2%;
+}
+
+.container-editPhoto{
+    width: 80px;
+    height: 80px;
+    margin: 0px auto 0.5em auto;
+    position: relative;
+}
+
+#photoUserEdit{
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+
+#edit-file{
+    position: absolute;
+    width: 100px;
+    opacity: 0;
+}
+
+.container-editPhoto label{
+    color: rgb(158, 106, 255);
+    position: absolute;
+    bottom: 0;
+    right: 3px;
+    font-size: 18px;
+}
+
+.container-editPortada{
+    margin-bottom: 17px;
+    width: 100%;
+    height: 110px;
+    border-radius: 6px;
+    position: relative;
+}
+
+#portadaUserEdit{
+    width: 100%;
+    height: 100px;
+    border-radius: 6px;
+}
+
+#edit-portada{
+    position: absolute;
+    opacity: 0;
+}
+
+.container-editPortada label{
+    position: absolute;
+    bottom: 6%;
+    right: 10%;
+    color: rgb(158, 106, 255);
+}
+
+.form-group{
+    width: 100%;
+    align-items: flex-start;
+    position: relative;
+    margin-bottom: 2.5%;;
+}
+
+.form-group ion-icon{
+    position: absolute;
+    top: 55%;
+    left: 3%;
+}
+
+.form-group label{
+    margin-bottom: 8px;
+    font-size: 13px;
+    color: gray;
+}
+
+.form-group input{
+    width: 100%;
+    padding: 0.7rem 2.4rem;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+#edit-about{
+    border: 1px solid gray;
+    width: 100%;
+    border-radius: 5px;
+    padding: 0.5em;
+}
+
+textarea{
+    padding: 0.5em;
+    overflow: hidden;
+    resize: none;
+    outline: none;
+    line-height: 1.5;
+}
+textarea:focus{
+    outline: none;
+    box-shadow: 0px 0px 0.2px 2px #356fec44;
+}
+
+textarea:hover,
+textarea:focus{
+    box-shadow: 0px 0px 7px 1px #b3b3b38f;
+    border: 0.55px solid #d7d7d7;
+}
+
+.btns-editProfile{
+    flex-direction: row !important;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.activeProgramming,
+.interest-programming img:hover{
+    box-shadow: 0px 0px 4px 1px #8b8b8bb8;
+    border-radius: 4px;
+}
+
+#resetForm{
+    height: 40px;
+    width: 146px;
+    border-radius: 15px;
+    margin: 10px 0px 25px 0px;
+    padding-left: 10px;
+    border: 1.5px transparent;
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    color: #6CC5DE;
+    font-size: 14px;
+    box-shadow: 1px 1px 2px 1px #8888;
+    font-weight: bold;
+}
+
+#btn-edit{
+    height: 40px;
+    width: 146px;
+    border-radius: 15px;
+    margin: 10px 0px 25px 0px;
+    padding-left: 10px;
+    border: 1.5px transparent;
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    color: #6CC5DE;
+    font-size: 14px;
+    box-shadow: 1px 1px 2px 1px #8888;
+    font-weight: bold;
+}
+.icons-programming{
+    margin-bottom: 0px !important ;
+}
+.interest-programming{
+    align-items:center;
+}
+
+.interest-programming img{
+    width: 30px;
+    margin-bottom: 3px;
+}
+
+.img-programming{
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    width: 100%;
+    
+}
+
+@media (min-width: 768px){
+    .modalContainer-edit{
+        width: 500px;
+        height: 100%;
+    }
+    #portadaUserEdit{
+        height: 100%;
+    }
+
+}
