@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+/* eslint-disable import/no-unresolved */
 import {
   doc,
   getDoc,

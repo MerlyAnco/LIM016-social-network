@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 import {
   deletePost,
   obtenerInfo,
@@ -137,7 +138,7 @@ export const template = (post) => {
     const imgSrc = postImg;
     console.log(imgSrc.src);
     if (
-      imgSrc.src !== 'http://localhost:5000/' && imgSrc.src !== 'http://127.0.0.1:5500/src/index.html' && imgSrc.src !== 'https://merlyanco.github.io/LIM016-social-network/'
+      imgSrc.src !== window.location.origin
     ) {
       imgSrc.className = 'img-post-home';
     } else {
@@ -148,7 +149,7 @@ export const template = (post) => {
   nuevoElemento.querySelectorAll('.date').forEach((date) => {
     const postId = date.parentElement.parentElement.parentElement.id;
     const pElement = date.firstChild;
-    for (let i = 0; i < post.length; i += 1) {
+    for (let i = 0; i < post.length; i++) {
       if (post[i].idP === postId) {
         const d = new Date();
         const dateUTC = post[i].date;
@@ -165,7 +166,7 @@ export const template = (post) => {
     div.addEventListener('click', (e) => {
       const id = e.target.parentNode.parentNode.parentNode.id;
       console.log(e.target.parentNode.parentNode.parentNode);
-      for (let i = 0; i < post.length; i += 1) {
+      for (let i = 0; i < post.length; i++) {
         if (post[i].userID === user.uid && post[i].idP === id) {
           document.querySelector(`#box-options-${id}`).classList.toggle('show');
           console.log('holi');
@@ -179,7 +180,7 @@ export const template = (post) => {
     div.addEventListener('click', (e) => {
       const id = e.target.parentNode.parentNode.parentNode.parentNode.id;
       document.querySelector('.modalDelete').classList.add('revelar');
-      for (let i = 0; i < post.length; i += 1) {
+      for (let i = 0; i < post.length; i++) {
         document.querySelector('.aceptDelete').addEventListener('click', () => {
           console.log(post[i].userID === user.uid, post[i].idP === id);
           if (post[i].userID === user.uid && post[i].idP === id) {
@@ -277,7 +278,6 @@ export const template = (post) => {
   });
 
   nuevoElemento.querySelectorAll('.namePost').forEach((link) => {
-    console.log(link);
     link.addEventListener('click', (e) => {
       const idUser = e.target.dataset.id;
       localStorage.setItem('idUserRedirecionar', idUser); // almacenar el id del usuario a redireccionar

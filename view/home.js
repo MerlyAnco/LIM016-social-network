@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 import {
   readData,
   userDocRef,
@@ -13,6 +14,7 @@ import {
 import { template } from './templatePost.js';
 import { logout } from '../firebase/firebase-auth.js';
 import { templateUsers } from './templateUsers.js';
+// eslint-disable-next-line import/named
 import { newPost, functionNewPost } from './newPost.js';
 
 export const Home = () => {
@@ -134,7 +136,7 @@ export const FunctionsHome = () => {
       console.log(userInfo.interest);
       document.getElementById('ocupation').innerHTML = `${userInfo.career}`;
       document.getElementById('about').innerHTML = `${userInfo.about}`;
-      for (let i = 0; i < userInfo.interest.length; i += 1) {
+      for (let i = 0; i < userInfo.interest.length; i++) {
         const pEtiqueta = document.createElement('p');
         pEtiqueta.classList.add('etiqueta');
         pEtiqueta.innerHTML = `${userInfo.interest[i]}`;

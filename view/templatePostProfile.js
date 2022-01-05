@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 import {
   deletePost, obtenerInfo, updatePost, readComment, saveComment, saveLike, readLikes, deleteLike,
 } from '../firebase/firestore.js';
@@ -104,14 +105,13 @@ export const showPostProfile = (post) => {
 
   obtenerInfo(idUserRedirect).then((userInfo) => {
     sectionPostProfile.querySelectorAll(`.nameUserPostProfile${user.uid}`).forEach((nameUser) => {
-      const nameOfUser = nameUser;
-      nameOfUser.innerHTML = `${userInfo.data().name}`;
+      // eslint-disable-next-line no-param-reassign
+      nameUser.innerHTML = `${userInfo.data().name}`;
     });
 
     sectionPostProfile.querySelectorAll('#photo-profile').forEach((photoUser) => {
-      const photoOfUser = photoUser;
-      photoOfUser.src = `${userInfo.data().photo}`;
-      console.log(photoUser);
+      // eslint-disable-next-line no-param-reassign
+      photoUser.src = `${userInfo.data().photo}`;
     });
   });
 
@@ -138,7 +138,7 @@ export const showPostProfile = (post) => {
   sectionPostProfile.querySelectorAll('.date').forEach((date) => {
     const postId = date.parentElement.parentElement.parentElement.id;
     const pElement = date.firstChild;
-    for (let i = 0; i < post.length; i += 1) {
+    for (let i = 0; i < post.length; i++) {
       if (post[i].postID === postId) {
         const d = new Date();
         const dateUTC = post[i].date;
@@ -149,22 +149,19 @@ export const showPostProfile = (post) => {
     }
   });
 
-  console.log(post);
   sectionPostProfile.querySelectorAll('.postImg').forEach((postImg) => {
     const imgSrc = postImg;
-    console.log(imgSrc.src);
-    if (imgSrc.src !== 'http://localhost:5000/' && imgSrc.src !== 'http://127.0.0.1:5500/src/index.html' && imgSrc.src !== 'https://merlyanco.github.io/LIM016-social-network/') {
+    if (imgSrc.src !== window.location.origin) {
       imgSrc.className = 'img-post-home';
     } else {
       imgSrc.className = 'postImg';
     }
-    console.log(imgSrc.className);
   });
 
   sectionPostProfile.querySelectorAll('.icon-options').forEach((div) => {
     div.addEventListener('click', (e) => {
       const id = e.target.parentNode.parentNode.parentNode.id;
-      for (let i = 0; i < post.length; i += 1) {
+      for (let i = 0; i < post.length; i++) {
         console.log(post);
         if (post[i].userID === user.uid && post[i].postID === id) {
           console.log('Funciona');
@@ -180,7 +177,7 @@ export const showPostProfile = (post) => {
     div.addEventListener('click', (e) => {
       const id = e.target.parentNode.parentNode.parentNode.parentNode.id;
       document.querySelector('.modalDelete').classList.add('revelar');
-      for (let i = 0; i < post.length; i += 1) {
+      for (let i = 0; i < post.length; i++) {
         document.querySelector('.aceptDelete').addEventListener('click', () => {
           console.log(post[i].userID === user.uid, post[i].postID === id);
           if (post[i].userID === user.uid && post[i].postID === id) {
@@ -201,7 +198,7 @@ export const showPostProfile = (post) => {
       console.log(id);
       // document.querySelector(`#box-options-${id}`).classList.toggle('show');
 
-      for (let i = 0; i < post.length; i += 1) {
+      for (let i = 0; i < post.length; i++) {
         console.log(i, id, post[i].postID);
         if (post[i].userID === user.uid && post[i].postID === id) {
           document.querySelector(`#contentPost${id}`).innerHTML = `

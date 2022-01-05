@@ -10,6 +10,7 @@ import {
   createUserWithEmailAndPassword,
   sendEmailVerification,
   onAuthStateChanged,
+  // eslint-disable-next-line import/no-unresolved
 } from './firebase-config.js';
 
 export const currentUser = () => auth;
