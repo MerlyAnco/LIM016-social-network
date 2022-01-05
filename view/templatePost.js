@@ -93,7 +93,8 @@ export const template = (post) => {
     readLikes((likes) => {
       const num = likes.length;
       parrafoCountLikes.innerHTML = num;
-      if (likes[0] !== undefined) {
+      const arr = likes.filter((like) => like.user === user.displayName);
+      if (arr.length >= 1) {
         iconLikes.className = 'fas fa-heart icon';
       }
     }, idPost);

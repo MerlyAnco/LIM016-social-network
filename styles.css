@@ -265,7 +265,7 @@ p.errorMessage{
     color: cornflowerblue;
 }
 
-@media (min-width: 767px){
+@media (min-width: 769px){
     .logo {
       font-size: 40px;
     }

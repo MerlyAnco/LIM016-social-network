@@ -122,7 +122,8 @@ export const showPostProfile = (post) => {
     readLikes((likes) => {
       const num = likes.length;
       parrafoCountLikes.innerHTML = num;
-      if (likes[0] !== undefined) {
+      const arr = likes.filter((like) => like.user === user.displayName);
+      if (arr.length >= 1) {
         iconLikes.className = 'fas fa-heart icon';
       }
     }, idPost);
@@ -152,7 +153,7 @@ export const showPostProfile = (post) => {
   sectionPostProfile.querySelectorAll('.postImg').forEach((postImg) => {
     const imgSrc = postImg;
     console.log(imgSrc.src);
-    if ((imgSrc.src !== 'http://localhost:5000/') && (imgSrc.src !== 'http://127.0.0.1:5500/src/index.html')) {
+    if (imgSrc.src !== 'http://localhost:5000/' && imgSrc.src !== 'http://127.0.0.1:5500/src/index.html' && imgSrc.src !== 'https://merlyanco.github.io/LIM016-social-network/') {
       imgSrc.className = 'img-post-home';
     } else {
       imgSrc.className = 'postImg';
@@ -162,7 +163,6 @@ export const showPostProfile = (post) => {
 
   sectionPostProfile.querySelectorAll('.icon-options').forEach((div) => {
     div.addEventListener('click', (e) => {
-      console.log('1');
       const id = e.target.parentNode.parentNode.parentNode.id;
       for (let i = 0; i < post.length; i += 1) {
         console.log(post);
@@ -178,12 +178,10 @@ export const showPostProfile = (post) => {
 
   sectionPostProfile.querySelectorAll('.delete').forEach((div) => {
     div.addEventListener('click', (e) => {
-      console.log('2');
       const id = e.target.parentNode.parentNode.parentNode.parentNode.id;
       document.querySelector('.modalDelete').classList.add('revelar');
       for (let i = 0; i < post.length; i += 1) {
         document.querySelector('.aceptDelete').addEventListener('click', () => {
-          console.log('3');
           console.log(post[i].userID === user.uid, post[i].postID === id);
           if (post[i].userID === user.uid && post[i].postID === id) {
             deletePost(id);
@@ -199,7 +197,6 @@ export const showPostProfile = (post) => {
 
   sectionPostProfile.querySelectorAll('.edit').forEach((div) => {
     div.addEventListener('click', (e) => {
-      console.log('5');
       const id = e.target.parentNode.parentNode.parentNode.parentNode.id;
       console.log(id);
       // document.querySelector(`#box-options-${id}`).classList.toggle('show');
@@ -233,7 +230,6 @@ export const showPostProfile = (post) => {
   const nameUser = user.displayName;
   sectionPostProfile.querySelectorAll('.fa-heart').forEach((like) => {
     like.addEventListener('click', (e) => {
-      console.log('7');
       const postId = e.target.parentNode.parentNode.parentNode.id;
       if (e.target.className === 'far fa-heart icon') {
         e.target.className = 'fas fa-heart icon';
@@ -250,7 +246,6 @@ export const showPostProfile = (post) => {
 
   sectionPostProfile.querySelectorAll('.fa-comment').forEach((icon) => {
     icon.addEventListener('click', (e) => {
-      console.log('8');
       const id = e.target.parentNode.parentNode.parentNode.id;
       const showComment = document.getElementById(`showComment${id}`);
       if (showComment.className !== 'showContent') {
@@ -266,7 +261,6 @@ export const showPostProfile = (post) => {
 
   sectionPostProfile.querySelectorAll('.saveComment').forEach((save) => {
     save.addEventListener('click', (e) => {
-      console.log('9');
       const id = e.target.parentNode.parentNode.parentNode.id;
       console.log(id);
       const showComment = document.getElementById(`showComment${id}`);

@@ -128,7 +128,7 @@
     font-size: 17px;
     font-weight: bold;
     color: #484860;
-    margin: 8px auto;
+    margin: 5px auto;
 }
 
 #sectionUsers{
@@ -252,8 +252,6 @@
     flex-direction: row;
     align-items: center;
     width: 100%;
-    overflow: hidden;
-    overflow-y: scroll;
 }
 .div-type{
     width: 100%;
@@ -307,7 +305,6 @@
     /* margin-left: 10px; */
     width: 100%;
     border-top: 2px solid #94A4F5;
-    padding-top: 7%;
 }
 
 #divParent-users h1{
@@ -321,6 +318,9 @@
 #sectionUsers{
     display: none;
     width: 100%;
+    height: 250px;
+    overflow: hidden;
+    overflow-y: scroll;
 }
 
 #section-User{
@@ -423,6 +423,8 @@
         align-items: center;
         width: 100%;
         height: 76vh;
+        overflow: hidden;
+        overflow-y: scroll;
     }
     .img-types{
         width: 90%;
