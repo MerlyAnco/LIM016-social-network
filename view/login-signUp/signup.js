@@ -1,7 +1,11 @@
 import {
+  loginGoogle,
+  loginGitHub,
   createUser,
   verificationEmail,
 } from '../../firebase/firebase-auth.js';
+
+import { verificarUsuario } from '../verificar-usuario.js';
 
 export const SignUp = () => {
   const viewSignUp = document.createElement('div');
@@ -19,7 +23,7 @@ export const SignUp = () => {
         <i class="fas fa-crown"></i>
         <p class="logo">QUEEN CODERS</p>
       </div>
-      <div><img id="logoLogin" class="imgInicioPequeño" src='./img/imgLogo.png'></div>
+      <div><img id="logoLogin" class="imgInicioPequeño" name="imgInicioPequeño"></div>
 
       <div class="form-group-text">
         <div class="textForm">
@@ -31,12 +35,6 @@ export const SignUp = () => {
       </div>
 
       <form id="signup-form">
-        <div class="form-group">
-          <span class="icon-input">
-            <i class="far fa-user-circle"></i>
-          </span>
-        <input type="text" id="signup-name"  placeholder="Name" required>
-        </div>
 
         <div class="form-group">
           <span class="icon-input">
@@ -54,7 +52,10 @@ export const SignUp = () => {
           <p id='passwordMessage' class="errorMessage"></p>
         </div>
 
-        <button type="submit" class="btnLogin" >CREATE A COUNT</button>
+        <button type="submit" class="btnLogin btnSingIn" >CREATE A COUNT</button><br>
+
+        <button type="button" class="icon-login" id="googleLogin"><img src="img/google.png"></i></button>
+        <button type="button" class="icon-login" id="githubLogin"><img src="img/github.png"></button>
 
         <div class="textResetPassword">
           <p class="registerText">Do you have an account?  <a href="#/signup" class="registerText link">Login now</a></p>
@@ -108,10 +109,38 @@ export const handleRegister = (e) => {
 };
 
 export const Register = () => {
+  const googleLogin = document.querySelector('#googleLogin');
+  const githubLogin = document.getElementById('githubLogin');
+
   const signupForm = document.querySelector('#signup-form');
 
   /* .......Registrarse con correo y contraseña...... */
   signupForm.addEventListener('submit', handleRegister);
+
+  googleLogin.addEventListener('click', () => {
+    loginGoogle()
+      .then(() => verificarUsuario())
+      .then((user) => {
+        localStorage.setItem('user', JSON.stringify(user));
+        window.location.hash = '#/home';
+      })
+      .catch((error) => {
+        const message = document.getElementById('generalMessage');
+        errorOccurs(error, message);
+      });
+  });
+
+  /* .......Logearse con GitHub........ */
+  githubLogin.addEventListener('click', () => {
+    loginGitHub()
+      .then(() => verificarUsuario())
+      .then(() => {
+        window.location.hash = '#/home';
+      }).catch((error) => {
+        const message = document.getElementById('generalMessage');
+        errorOccurs(error, message);
+      });
+  });
 
   /* .....Función ocultar y mostrar contraseña..... */
   const iconEye = document.querySelector('#icon-eye');
@@ -128,4 +157,6 @@ export const Register = () => {
       icon.classList.add('fa-eye-slash');
     }
   });
+  document.imgInicio.src = 'img/gif.gif';
+  document.imgInicioPequeño.src = 'img/gif.gif';
 };

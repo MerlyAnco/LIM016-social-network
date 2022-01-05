@@ -138,7 +138,7 @@ export const template = (post) => {
     const imgSrc = postImg;
     console.log(imgSrc.src);
     if (
-      imgSrc.src !== window.location.origin
+      imgSrc.src !== (window.location.origin + window.location.pathname)
     ) {
       imgSrc.className = 'img-post-home';
     } else {

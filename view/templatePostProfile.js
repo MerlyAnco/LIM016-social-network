@@ -151,7 +151,7 @@ export const showPostProfile = (post) => {
 
   sectionPostProfile.querySelectorAll('.postImg').forEach((postImg) => {
     const imgSrc = postImg;
-    if (imgSrc.src !== window.location.origin) {
+    if (imgSrc.src !== (window.location.origin + window.location.pathname)) {
       imgSrc.className = 'img-post-home';
     } else {
       imgSrc.className = 'postImg';

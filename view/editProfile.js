@@ -160,7 +160,7 @@ export const FunctionEdit = () => {
 
   // GUARDANDO NUEVA INFORMACION
 
-  // ........................foto de perfil.....................
+  // ........................foto de portada.....................
 
   const fileEditPortada = document.getElementById('edit-portada');
   let filesPortada = [];

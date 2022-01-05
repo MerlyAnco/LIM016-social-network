@@ -1,7 +1,7 @@
 import {
   loginEmail,
   loginGoogle,
-  loginFacebook,
+  // loginFacebook,
   loginGitHub,
 } from '../../firebase/firebase-auth.js';
 
@@ -58,7 +58,6 @@ export const Login = () => {
         </div>
         
         <button type="button" class="icon-login" id="googleLogin"><img src="img/google.png"></i></button>
-        <button type="button" class="icon-login" id="facebookLogin"><img src="img/facebook.png"></button>
         <button type="button" class="icon-login" id="githubLogin"><img src="img/github.png"></button>
         
         <div class="textResetPassword">
@@ -125,7 +124,7 @@ export const handleSubmit = (e) => {
 export const initLogin = () => {
   const signInForm = document.querySelector('#login-form');
   const googleLogin = document.querySelector('#googleLogin');
-  const facebookLogin = document.querySelector('#facebookLogin');
+  // const facebookLogin = document.querySelector('#facebookLogin');
   const githubLogin = document.getElementById('githubLogin');
 
   /* .........Logearse con correo........ */
@@ -146,17 +145,17 @@ export const initLogin = () => {
   });
 
   /* .......Logearse con Facebook........ */
-  facebookLogin.addEventListener('click', () => {
-    loginFacebook()
-      .then(() => verificarUsuario())
-      .then(() => {
-        window.location.hash = '#/home';
-      })
-      .catch((error) => {
-        const message = document.getElementById('generalMessage');
-        errorOccurs(error, message);
-      });
-  });
+  // facebookLogin.addEventListener('click', () => {
+  //   loginFacebook()
+  //     .then(() => verificarUsuario())
+  //     .then(() => {
+  //       window.location.hash = '#/home';
+  //     })
+  //     .catch((error) => {
+  //       const message = document.getElementById('generalMessage');
+  //       errorOccurs(error, message);
+  //     });
+  // });
 
   /* .......Logearse con GitHub........ */
   githubLogin.addEventListener('click', () => {

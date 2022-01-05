@@ -75,6 +75,10 @@ body::-webkit-scrollbar-thumb {
     font-size: 14px;
     box-shadow: 1px 1px 2px 1px #8888;
 }
+
+.btnSingIn{
+    margin-bottom: 4% !important;
+}
   
 .btnLogin{  
     height: 40px;
@@ -89,6 +93,7 @@ body::-webkit-scrollbar-thumb {
     box-shadow: 1px 1px 2px 1px #8888;
     font-weight: bold;
 }
+
 .form-group{
     position:relative;
 }
@@ -142,6 +147,7 @@ body::-webkit-scrollbar-thumb {
     width: 35px;
     height: fit-content;
     cursor: pointer;
+    margin-right: 4%;
 }
 .divResetPassword{    
     width: 70%;
