@@ -10,15 +10,15 @@ import {
   createUserWithEmailAndPassword,
   sendEmailVerification,
   onAuthStateChanged,
-  // eslint-disable-next-line import/no-unresolved
 } from './firebase-config.js';
 
 export const currentUser = () => auth;
 
 /* ----------------------------VISTA CON INICIO DE SESION - AUTH ---------------------------------*/
 /* .............SIGNUP.............. */
-// eslint-disable-next-line max-len
-export const createUser = (email, password) => createUserWithEmailAndPassword(auth, email, password);
+export const createUser = (email, password) => {
+  createUserWithEmailAndPassword(auth, email, password);
+};
 export const verificationEmail = () => sendEmailVerification(auth.currentUser);
 
 /* ........LOGIN PROVEEDORES....... */

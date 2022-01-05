@@ -1,5 +1,3 @@
-/* eslint-disable no-plusplus */
-/* eslint-disable max-len */
 import {
   deletePost, obtenerInfo, updatePost, readComment, saveComment, saveLike, readLikes, deleteLike,
 } from '../firebase/firestore.js';
@@ -106,13 +104,13 @@ export const showPostProfile = (post) => {
 
   obtenerInfo(idUserRedirect).then((userInfo) => {
     sectionPostProfile.querySelectorAll(`.nameUserPostProfile${user.uid}`).forEach((nameUser) => {
-      // eslint-disable-next-line no-param-reassign
-      nameUser.innerHTML = `${userInfo.data().name}`;
+      const nameOfUser = nameUser;
+      nameOfUser.innerHTML = `${userInfo.data().name}`;
     });
 
     sectionPostProfile.querySelectorAll('#photo-profile').forEach((photoUser) => {
-      // eslint-disable-next-line no-param-reassign
-      photoUser.src = `${userInfo.data().photo}`;
+      const photoOfUser = photoUser;
+      photoOfUser.src = `${userInfo.data().photo}`;
       console.log(photoUser);
     });
   });
@@ -139,8 +137,7 @@ export const showPostProfile = (post) => {
   sectionPostProfile.querySelectorAll('.date').forEach((date) => {
     const postId = date.parentElement.parentElement.parentElement.id;
     const pElement = date.firstChild;
-    // eslint-disable-next-line no-plusplus
-    for (let i = 0; i < post.length; i++) {
+    for (let i = 0; i < post.length; i += 1) {
       if (post[i].postID === postId) {
         const d = new Date();
         const dateUTC = post[i].date;
@@ -155,7 +152,6 @@ export const showPostProfile = (post) => {
   sectionPostProfile.querySelectorAll('.postImg').forEach((postImg) => {
     const imgSrc = postImg;
     console.log(imgSrc.src);
-    // eslint-disable-next-line no-plusplus
     if ((imgSrc.src !== 'http://localhost:5000/') && (imgSrc.src !== 'http://127.0.0.1:5500/src/index.html')) {
       imgSrc.className = 'img-post-home';
     } else {
@@ -168,7 +164,7 @@ export const showPostProfile = (post) => {
     div.addEventListener('click', (e) => {
       console.log('1');
       const id = e.target.parentNode.parentNode.parentNode.id;
-      for (let i = 0; i < post.length; i++) {
+      for (let i = 0; i < post.length; i += 1) {
         console.log(post);
         if (post[i].userID === user.uid && post[i].postID === id) {
           console.log('Funciona');
@@ -185,7 +181,7 @@ export const showPostProfile = (post) => {
       console.log('2');
       const id = e.target.parentNode.parentNode.parentNode.parentNode.id;
       document.querySelector('.modalDelete').classList.add('revelar');
-      for (let i = 0; i < post.length; i++) {
+      for (let i = 0; i < post.length; i += 1) {
         document.querySelector('.aceptDelete').addEventListener('click', () => {
           console.log('3');
           console.log(post[i].userID === user.uid, post[i].postID === id);
@@ -208,7 +204,7 @@ export const showPostProfile = (post) => {
       console.log(id);
       // document.querySelector(`#box-options-${id}`).classList.toggle('show');
 
-      for (let i = 0; i < post.length; i++) {
+      for (let i = 0; i < post.length; i += 1) {
         console.log(i, id, post[i].postID);
         if (post[i].userID === user.uid && post[i].postID === id) {
           document.querySelector(`#contentPost${id}`).innerHTML = `

@@ -9,6 +9,7 @@ export const storageRef = (imgUpload) => ref(storage, `img-post/${imgUpload.name
 export const uploadBytes1 = (storageRef1, imgUpload) => uploadBytes(storageRef1, imgUpload);
 export const storagePhotoProf = (imgUpload) => ref(storage, `img-profile/${imgUpload.name}`);
 export const storagePortada = (imgUpload) => ref(storage, `img-profile/${imgUpload.name}`);
-// eslint-disable-next-line max-len
-export const uploadTask = (storageRef1, imgUpload, metadata) => uploadBytesResumable(storageRef1, imgUpload, metadata);
+export const uploadTask = (storageRef1, imgUpload, metadata) => {
+  uploadBytesResumable(storageRef1, imgUpload, metadata);
+};
 export const getPhotoURL = (task) => getDownloadURL(task);

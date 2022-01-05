@@ -31,7 +31,6 @@ const auth = {
 // export const setDoc = jest.fn((document, values) => Promise.resolve(values));
 // export const doc = jest.fn((db, collection, docId) => Promise.resolve({}));
 // export const db = {};
-// eslint-disable-next-line max-len
 
 const createUserWithEmailAndPassword = jest.fn(() => Promise.resolve());
 const sendEmailVerification = jest.fn(() => Promise.resolve());

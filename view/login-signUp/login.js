@@ -172,8 +172,7 @@ export const initLogin = () => {
 
   /* .....Función ocultar y mostrar contraseña..... */
   const iconEye = document.querySelector('#icon-eye');
-  // eslint-disable-next-line func-names
-  iconEye.addEventListener('click', function () {
+  iconEye.addEventListener('click', () => {
     const icon = this.querySelector('i');
 
     if (this.nextElementSibling.type === 'password') {
@@ -188,7 +187,35 @@ export const initLogin = () => {
   });
   /* ........Imagen grande de Login............. */
 
-  document.imgInicio.src = 'img/gif.gif';
+  const imagenes = [];
+  imagenes[0] = 'img/loginnew.png';
+  imagenes[1] = 'img/logoLogin.png';
+  imagenes[2] = 'img/imgLogo.png';
 
-  document.imgInicioPequeño.src = 'img/gif.gif';
+  let indice = 0;
+
+  function cambiarImagenes() {
+    document.imgInicio.src = imagenes[indice];
+
+    if (indice < 2) {
+      indice += 1;
+    } else {
+      indice = 0;
+    }
+  }
+
+  setInterval(cambiarImagenes, 2000);
+
+  /* ........Imagen pequeña de Login............. */
+
+  function cambiarImagenes2() {
+    document.imgInicioPequeño.src = imagenes[indice];
+
+    if (indice < 2) {
+      indice += 1;
+    } else {
+      indice = 0;
+    }
+  }
+  setInterval(cambiarImagenes2, 2000);
 };

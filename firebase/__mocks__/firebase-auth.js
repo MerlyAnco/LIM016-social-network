@@ -51,8 +51,9 @@ export {
 // export const doc = jest.fn((db, collection, docId) => Promise.resolve({}));
 // export const db = {};
 
-// eslint-disable-next-line max-len
-// export const signInWithEmailAndPassword = jest.fn((auth, email, password) => Promise.resolve({}));
+// export const signInWithEmailAndPassword = jest.fn((auth, email, password) => {
+// Promise.resolve({}));
+// };
 
 // export const loginEmail = jest.fn(() => Promise.resolve(
 //   {

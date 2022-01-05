@@ -8,8 +8,7 @@ const changeView = () => {
   footer.innerHTML = '';
   const header = document.getElementById('container-header');
   header.innerHTML = '';
-  // eslint-disable-next-line prefer-const
-  let idUser = localStorage.getItem('idUserRedirecionar');
+  const idUser = localStorage.getItem('idUserRedirecionar');
 
   switch (window.location.hash) {
     case '':

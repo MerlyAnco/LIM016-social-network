@@ -115,8 +115,7 @@ export const Register = () => {
 
   /* .....Función ocultar y mostrar contraseña..... */
   const iconEye = document.querySelector('#icon-eye');
-  // eslint-disable-next-line func-names
-  iconEye.addEventListener('click', function () {
+  iconEye.addEventListener('click', () => {
     const icon = this.querySelector('i');
 
     if ((this.nextElementSibling).type === 'password') {

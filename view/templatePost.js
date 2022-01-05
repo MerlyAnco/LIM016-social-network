@@ -1,4 +1,3 @@
-/* eslint-disable no-plusplus */
 import {
   deletePost,
   obtenerInfo,
@@ -17,7 +16,7 @@ export const template = (post) => {
   const showPost = document.getElementById('showPost');
   const nuevoElemento = document.createElement('div');
   const user = JSON.parse(localStorage.getItem('user'));
-  console.log(user)
+  console.log(user);
   post.forEach((onePost) => {
     nuevoElemento.innerHTML += `
     <div class="postDiv" id="${onePost.idP}">
@@ -136,10 +135,8 @@ export const template = (post) => {
     // console.log(postImgId);
     const imgSrc = postImg;
     console.log(imgSrc.src);
-    // eslint-disable-next-line no-plusplus
     if (
-      imgSrc.src !== 'http://localhost:5000/'
-      && imgSrc.src !== 'http://127.0.0.1:5500/src/index.html'
+      imgSrc.src !== 'http://localhost:5000/' && imgSrc.src !== 'http://127.0.0.1:5500/src/index.html' && imgSrc.src !== 'https://merlyanco.github.io/LIM016-social-network/'
     ) {
       imgSrc.className = 'img-post-home';
     } else {
@@ -150,8 +147,7 @@ export const template = (post) => {
   nuevoElemento.querySelectorAll('.date').forEach((date) => {
     const postId = date.parentElement.parentElement.parentElement.id;
     const pElement = date.firstChild;
-    // eslint-disable-next-line no-plusplus
-    for (let i = 0; i < post.length; i++) {
+    for (let i = 0; i < post.length; i += 1) {
       if (post[i].idP === postId) {
         const d = new Date();
         const dateUTC = post[i].date;
@@ -168,7 +164,7 @@ export const template = (post) => {
     div.addEventListener('click', (e) => {
       const id = e.target.parentNode.parentNode.parentNode.id;
       console.log(e.target.parentNode.parentNode.parentNode);
-      for (let i = 0; i < post.length; i++) {
+      for (let i = 0; i < post.length; i += 1) {
         if (post[i].userID === user.uid && post[i].idP === id) {
           document.querySelector(`#box-options-${id}`).classList.toggle('show');
           console.log('holi');
@@ -182,7 +178,7 @@ export const template = (post) => {
     div.addEventListener('click', (e) => {
       const id = e.target.parentNode.parentNode.parentNode.parentNode.id;
       document.querySelector('.modalDelete').classList.add('revelar');
-      for (let i = 0; i < post.length; i++) {
+      for (let i = 0; i < post.length; i += 1) {
         document.querySelector('.aceptDelete').addEventListener('click', () => {
           console.log(post[i].userID === user.uid, post[i].idP === id);
           if (post[i].userID === user.uid && post[i].idP === id) {
@@ -199,7 +195,7 @@ export const template = (post) => {
       const id = e.target.parentNode.parentNode.parentNode.parentNode.id;
       document.querySelector(`#box-options-${id}`).classList.toggle('show');
 
-      for (let i = 0; i < post.length; i++) {
+      for (let i = 0; i < post.length; i += 1) {
         console.log(i, 'id:', id, 'idPots:', post[i].idP);
         console.log(post[i].userID === user.uid, post[i].idP === id);
         if (post[i].userID === user.uid && post[i].idP === id) {
@@ -288,7 +284,7 @@ export const template = (post) => {
       console.log('holi');
       console.log(idUser);
     });
-  })
+  });
 
   showPost.innerHTML = '';
   showPost.appendChild(nuevoElemento);

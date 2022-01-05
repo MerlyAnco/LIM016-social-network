@@ -1,4 +1,3 @@
-/* eslint-disable no-plusplus */
 import {
   readPostProfile, getUnsubscribe, leerPostProfile, leerPostProfileFriend,
 } from '../firebase/firestore.js';
@@ -30,6 +29,8 @@ export const Profile = () => {
         <div id="infoUserProfile"></div>
         <p id="career"></p>
         <p id="aboutP"></p>
+        <div id="div-etiquetaMobile">
+        </div>
         <ul class="container-follower">
           <li class="follower">
             <p class="li-number">1.2 M</p>
@@ -119,11 +120,17 @@ export const FunctionProfile = () => {
     console.log(docUser.data().interest);
     document.getElementById('ocupation').innerHTML = `${docUser.data().career}`;
     document.getElementById('about').innerHTML = `${docUser.data().about}`;
-    for (let i = 0; i < docUser.data().interest.length; i++) {
+    for (let i = 0; i < docUser.data().interest.length; i += 1) {
       const pEtiqueta = document.createElement('p');
       pEtiqueta.classList.add('etiqueta');
       pEtiqueta.innerHTML = `${docUser.data().interest[i]}`;
       document.getElementById('div-etiqueta').appendChild(pEtiqueta);
+    }
+    for (let i = 0; i < docUser.data().interest.length; i += 1) {
+      const pEtiqueta = document.createElement('p');
+      pEtiqueta.classList.add('etiqueta');
+      pEtiqueta.innerHTML = `${docUser.data().interest[i]}`;
+      document.getElementById('div-etiquetaMobile').appendChild(pEtiqueta);
     }
   });
 

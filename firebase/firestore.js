@@ -1,5 +1,3 @@
-/* eslint-disable max-len */
-/* eslint-disable import/no-unresolved */
 import {
   doc,
   getDoc,
@@ -252,7 +250,8 @@ export const readPostProfile = (uid) => {
   return docUser;
 };
 
-export const updateInfoUser = (uid, newAbout, newName, newPhoto, URLportada, newCareer, arrayInterest) => {
+export const updateInfoUser = (uid, newAbout, newName, newPhoto, URLportada, newCareer,
+  arrayInterest) => {
   const infoUser = doc(db, 'usuarios', uid);
   return updateDoc(infoUser, {
     about: newAbout,

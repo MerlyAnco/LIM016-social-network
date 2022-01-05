@@ -1,4 +1,4 @@
-/* eslint-disable prefer-const */
+/* eslint-disable max-len */
 import {
   storagePhotoProf,
   uploadTask,
@@ -157,122 +157,63 @@ export const FunctionEdit = () => {
     });
   })();
 
-  // SUBIENDO NUEVA FOTO DE PERFIL
-  // window.addEventListener('click', (e) => {
-  //   const fileEdit = e.target;
-  //   console.log(fileEdit);
-  //   let files = [];
-  //   const readerEdit = new FileReader();
-
-  //   fileEdit.onchange = (a) => {
-  //     files = a.target.files;
-  //     readerEdit.readAsDataURL(files[0]);
-  //     console.log(readerEdit);
-  //     console.log(readerEdit.result);
-  //   // uploadImg(files);
-  //   };
-  //   readerEdit.onload = function () {
-  //     if (fileEdit.id === 'edit-file') {
-  //       console.log(readerEdit);
-  //       newPhoto.src = readerEdit.result;
-  //     } else if (fileEdit.id === 'edit-portada') {
-  //       console.log(readerEdit);
-  //       newPortada.src = readerEdit.result;
-  //     }
-  //   };
-
-  //   document.getElementById('btn-edit').addEventListener('click', (e) => {
-  //     e.preventDefault();
-  //     // eslint-disable-next-line max-len
-  //     if (fileEdit.files[0]) {
-  //       const imgUpload = files[0];
-  //       const metadata = { content: imgUpload.type };
-  //       console.log(imgUpload);
-
-  //       const storageRef1 = storagePhotoProf(imgUpload);
-  //       const task = uploadTask(storageRef1, imgUpload, metadata);
-
-  //       task.on('state_changed', (snapshot) => {
-  //         const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-  //         console.log(`Upload is ${progress}% done`);
-  //         switch (snapshot.state) {
-  //           case 'paused':
-  //             console.log('Upload is paused');
-  //             break;
-  //           case 'running':
-  //             console.log('Upload is running');
-  //             break;
-  //           default:
-  //             console.log('holi');
-  //             break;
-  //         }
-  //       },
-  //       (error) => {
-  //         console.log(error);
-  //       },
-  //       (() => {
-  //         // eslint-disable-next-line max-len
-  //         getPhotoURL(task.snapshot.ref).then((downloadURL) => {
-  //           // eslint-disable-next-line max-len
-  // eslint-disable-next-line max-len
-  //           updateInfoUser(user.uid, newAbout.value, newName.value, downloadURL, newPortada.src, newCareer.value);
-  //           window.location.hash = '#/profile';
-  //         });
-  //       }));
-  //     } else {
-  //       // eslint-disable-next-line max-len
-  // eslint-disable-next-line max-len
-  //       updateInfoUser(user.uid, newAbout.value, newName.value, newPhoto.src, newPortada.src, newCareer.value);
-  //       window.location.hash = '#/profile';
-  //     }
-  //   });
-  // });
-
-  //   document.getElementById('btn-edit').addEventListener('click', () => {
-  //     // eslint-disable-next-line max-len
-  //     if (fileEdit.files[0]) {
-  //       const imgUpload = files[0];
-  //       console.log(imgUpload)
-  //       const metadata = { content: imgUpload.type };
-  //       console.log(imgUpload);
-
-  //       const storageRef1 = storagePhotoProf(imgUpload);
-  //       const task = uploadTask(storageRef1, imgUpload, metadata);
-
-  //       task.on('state_changed', (snapshot) => {
-  //         const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-  //         console.log(`Upload is ${progress}% done`);
-  //         switch (snapshot.state) {
-  //           case 'paused':
-  //             console.log('Upload is paused');
-  //             break;
-  //           case 'running':
-  //             console.log('Upload is running');
-  //             break;
-  //           default:
-  //             console.log('holi');
-  //             break;
-  //         }
-  //       },
-  //       (error) => {
-  //         console.log(error);
-  //       },
-  //       (() => {
-  //         // eslint-disable-next-line max-len
-  //         getPhotoURL(task.snapshot.ref).then((downloadURL) => {
-  //           updateInfoUser(user.uid, newAbout.value, newName.value, downloadURL, newPortada.src);
-  //           window.location.hash = '#/profile';
-  //         });
-  //       }));
-  //     } else {
-  //       updateInfoUser(user.uid, newAbout.value, newName.value, newPhoto.src, newPortada.src);
-  //       window.location.hash = '#/home';
-  //     }
-  //   });
-  // });
-
   // GUARDANDO NUEVA INFORMACION
 
+  // ........................foto de perfil.....................
+
+  const fileEditPortada = document.getElementById('edit-portada');
+  let filesPortada = [];
+  const readerEditPortada = new FileReader();
+
+  fileEditPortada.onchange = (a) => {
+    filesPortada = a.target.files;
+    // const extention = GetFileExt(files[0]);
+    // const name = GetFileName(files[0]);
+
+    readerEditPortada.readAsDataURL(filesPortada[0]);
+    // uploadImg(files);
+  };
+  readerEditPortada.onload = function () {
+    console.log(readerEditPortada);
+    newPortada.src = readerEditPortada.result;
+  };
+
+  if (fileEditPortada.files[0]) {
+    const imgUploadPortada = filesPortada[0];
+    const metadata1 = { content: imgUploadPortada.type };
+    console.log(imgUploadPortada);
+
+    const storageRef2 = storagePhotoProf(imgUploadPortada);
+    const task1 = uploadTask(storageRef2, imgUploadPortada, metadata1);
+
+    task1.on('state_changed', (snapshot) => {
+      const progress1 = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+      console.log(`Upload is ${progress1}% done`);
+      switch (snapshot.state) {
+        case 'paused':
+          console.log('Upload is paused');
+          break;
+        case 'running':
+          console.log('Upload is running');
+          break;
+        default:
+          console.log('holi');
+          break;
+      }
+    },
+    (error) => {
+      console.log(error);
+    },
+    (() => {
+    // eslint-disable-next-line max-len
+      getPhotoURL(task1.snapshot.ref).then((downloadURL) => {
+      // eslint-disable-next-line max-len
+        newPortada.src = downloadURL;
+      });
+    }));
+  }
+
+  // ........................ foto de portada..........................
   const fileEdit = document.getElementById('edit-file');
   let files = [];
   const readerEdit = new FileReader();
@@ -290,6 +231,40 @@ export const FunctionEdit = () => {
     newPhoto.src = readerEdit.result;
   };
 
+  if (fileEdit.files[0]) {
+    const imgUpload = files[0];
+    const metadata = { content: imgUpload.type };
+    console.log(imgUpload);
+
+    const storageRef1 = storagePhotoProf(imgUpload);
+    const task = uploadTask(storageRef1, imgUpload, metadata);
+
+    task.on('state_changed', (snapshot) => {
+      const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+      console.log(`Upload is ${progress}% done`);
+      switch (snapshot.state) {
+        case 'paused':
+          console.log('Upload is paused');
+          break;
+        case 'running':
+          console.log('Upload is running');
+          break;
+        default:
+          console.log('holi');
+          break;
+      }
+    },
+    (error) => {
+      console.log(error);
+    },
+    (() => {
+    // eslint-disable-next-line max-len
+      getPhotoURL(task.snapshot.ref).then((downloadURL) => {
+      // eslint-disable-next-line max-len
+        newPhoto.src = downloadURL;
+      });
+    }));
+  }
   // Reset
   document.querySelector('#resetForm').addEventListener('click', () => {
     document.querySelector('.form-editProfile').reset();
@@ -301,41 +276,10 @@ export const FunctionEdit = () => {
     e.preventDefault();
     // eslint-disable-next-line max-len
     if (fileEdit.files[0]) {
-      const imgUpload = files[0];
-      const metadata = { content: imgUpload.type };
-      console.log(imgUpload);
-
-      const storageRef1 = storagePhotoProf(imgUpload);
-      const task = uploadTask(storageRef1, imgUpload, metadata);
-
-      task.on('state_changed', (snapshot) => {
-        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        console.log(`Upload is ${progress}% done`);
-        switch (snapshot.state) {
-          case 'paused':
-            console.log('Upload is paused');
-            break;
-          case 'running':
-            console.log('Upload is running');
-            break;
-          default:
-            console.log('holi');
-            break;
-        }
-      },
-      (error) => {
-        console.log(error);
-      },
-      (() => {
-      // eslint-disable-next-line max-len
-        getPhotoURL(task.snapshot.ref).then((downloadURL) => {
-        // eslint-disable-next-line max-len
-          updateInfoUser(user.uid, newAbout.value, newName.value, downloadURL, newPortada.src, newCareer.value, arrayInterest)
-            .then(() => {
-              window.location.reload();
-            });
+      updateInfoUser(user.uid, newAbout.value, newName.value, newPhoto.src, newPortada.src, newCareer.value, arrayInterest)
+        .then(() => {
+          window.location.reload();
         });
-      }));
     } else {
     // eslint-disable-next-line max-len
       updateInfoUser(user.uid, newAbout.value, newName.value, newPhoto.src, newPortada.src, newCareer.value, arrayInterest)

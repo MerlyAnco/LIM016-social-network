@@ -104,7 +104,6 @@ export const functionNewPost = () => {
   };
   const postDescription = document.getElementById('post-description');
   document.querySelector('.publish').addEventListener('click', () => {
-    // eslint-disable-next-line max-len
     if (
       (postDescription.value !== '' && photoFile.files[0])
       || (postDescription.value === '' && photoFile.files[0])

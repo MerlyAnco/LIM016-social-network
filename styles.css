@@ -8,7 +8,20 @@ body {
     background-image: linear-gradient(to bottom, #bebdff 0%, #c6fcff 100%);
     font-family: "Outfit", sans-serif;
 }
-  
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+body::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-image: linear-gradient(to bottom, #e0f5ff 0%, #FFFFFF 100%);
+}
+body::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(rgb(190, 189, 255) 0%, rgb(198, 252, 255) 100%);
+  border-radius: 0px;
+  -webkit-box-shadow: rgba(0,0,0,.12) 0 3px 13px 1px;
+}
+
 #container {
     display: flex;
     flex-direction: column;
