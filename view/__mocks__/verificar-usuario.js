@@ -1,1 +1,1 @@
-export const verificarUsuario = () => Promise.resolve();
+export const carUsuario = () => Promise.resolve();

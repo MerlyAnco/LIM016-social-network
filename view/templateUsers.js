@@ -15,9 +15,10 @@ export const templateUsers = () => {
       </div>
     </div>
   `;
-    document.querySelectorAll('.oneDivUser-parrafo').forEach((link) => {
+    divUsers.querySelectorAll('.oneDivUser-parrafo').forEach((link) => {
       link.addEventListener('click', (e) => {
         const idUser = e.target.dataset.id;
+        console.log(idUser);
         localStorage.setItem('idUserRedirecionar', idUser); // almacenar el id del usuario a redireccionar
         window.location.href = `#/home/profile/${idUser}`;
         console.log('holi');

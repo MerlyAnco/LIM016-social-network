@@ -1,6 +1,8 @@
 /* eslint-disable no-plusplus */
 import {
   readPostProfile, getUnsubscribe, leerPostProfile, leerPostProfileFriend,
+  getUnsubscribeComments,
+  getUnsubscribeLikes,
 } from '../firebase/firestore.js';
 
 import { profileEdit, FunctionEdit } from './editProfile.js';
@@ -9,6 +11,7 @@ import {
 } from './templatePostProfile.js';
 import { templateUsers } from './templateUsers.js';
 import { newPost, functionNewPost } from './newPost.js';
+import { logout } from '../firebase/firebase-auth.js';
 
 export const Profile = () => {
   // Stop listening to changes
@@ -52,6 +55,7 @@ export const Profile = () => {
   <section id="section-infoUser">
     <div id="section-User" class=" fullUser">
       <div class="info-user-full">
+      <div class="lds-roller loader loaderInfo" id="loaderProfile"><img src="./img/loader.gif"></div>
       <div id="sectionDescription">
         <h1>Description</h1>
         <div id="infoDescription">
@@ -70,7 +74,10 @@ export const Profile = () => {
     </div>
     <section id="post-section" class="container-postProfile">
       <button id="btn-newPost" style="display:none"> Add New Post </button>
+      <div style="position: relative;">
+    <div class="lds-roller loader loaderPost" id="loader"><img src="./img/loader.gif"></div>
       <div id="PostProfile"></div>
+      </div>
     </section>
   </section>
 
@@ -92,6 +99,7 @@ export const Profile = () => {
 };
 
 export const FunctionProfile = () => {
+  document.documentElement.scrollTop = 0;
   const idUserRedirect = window.localStorage.getItem('idUserRedirecionar');
   console.log(idUserRedirect);
   const userCurrent = JSON.parse(localStorage.getItem('user'));
@@ -133,7 +141,15 @@ export const FunctionProfile = () => {
       pEtiqueta.innerHTML = `${docUser.data().interest[i]}`;
       document.getElementById('div-etiquetaMobile').appendChild(pEtiqueta);
     }
-  });
+  })
+    .then(() => {
+      setTimeout(() => {
+        document.getElementById('loader').classList.toggle('loader2');
+      }, 3000);
+      setTimeout(() => {
+        document.getElementById('loader').style.display = 'none';
+      }, 3000);
+    }).then(() => { document.getElementById('loaderProfile').style.display = 'none'; });
 
   document.getElementById('goEdit').addEventListener('click', () => {
     profileEdit();
@@ -152,6 +168,36 @@ export const FunctionProfile = () => {
     newPost();
     document.querySelector('.modalNewPost').style.display = 'flex';
     functionNewPost();
+  });
+
+  // LogOut
+  window.addEventListener('click', (e) => {
+    const btnOut = e.target.id;
+    if (btnOut === 'out') {
+      logout()
+        .then(() => {
+          getUnsubscribe();
+          getUnsubscribeComments();
+          getUnsubscribeLikes();
+          console.log('log out');
+          window.location.hash = '#/';
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } else if (btnOut === 'logout-mob') {
+      logout()
+        .then(() => {
+          getUnsubscribe();
+          getUnsubscribeComments();
+          getUnsubscribeLikes();
+          console.log('log out');
+          window.location.hash = '#/';
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
   });
 
   getUnsubscribe();

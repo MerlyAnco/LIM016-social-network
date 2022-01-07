@@ -39,6 +39,7 @@ export const getUsers = () => {
     });
   });
 };
+
 export const getUsersOthers = (uid) => {
   const q = query(collection(db, 'usuarios'), where('userUID', '!=', `${uid}`));
   return new Promise((resolve) => {
@@ -59,7 +60,7 @@ export const getUsersOthers = (uid) => {
 // /* ------------------  POSTS  --------------------- */
 let unsubscribe;
 
-export const readData = (callback) => {
+export const readData = (callback) => new Promise((resolve) => {
   const q = query(collection(db, 'post'), where('privacity', '==', 'amigos'), orderBy('date', 'desc'));
   unsubscribe = onSnapshot(q, (querySnapshot) => {
     const posts = [];
@@ -74,10 +75,11 @@ export const readData = (callback) => {
       objectPost.privacity = doct.data().privacity;
       posts.push(objectPost);
     });
-    return callback(posts);
+    callback(posts);
+    resolve();
     // console.log(posts);
   });
-};
+});
 
 export const getDataPostType = (callback, type) => {
   const q = query(collection(db, 'post'), where('privacity', '==', 'amigos'), orderBy('date', 'desc'), where('type', '==', type));
@@ -110,11 +112,11 @@ export const savePost = (postDescription, userID, imgULR, Privacity, Type) => ad
   type: Type,
 });
 
-export const obtenerInfo = (ID) => {
+export const obtenerInfo = (ID) => new Promise((resolve) => {
   const docRef = doc(db, 'usuarios', ID);
   const docSnap = getDoc(docRef);
-  return docSnap;
-};
+  resolve(docSnap);
+});
 export const deletePost = (id) => deleteDoc(doc(db, 'post', id));
 
 export const updatePost = (id, postEdit) => {
@@ -125,8 +127,7 @@ export const updatePost = (id, postEdit) => {
 };
 
 // /* ----------------- LIKES ----------------- */
-export const saveLike = (id, userId, userName) => setDoc(doc(db, 'post', id, 'likes', userId), {
-  user: userName,
+export const saveLike = (id, userId) => setDoc(doc(db, 'post', id, 'likes', userId), {
   date: Date.now(),
 });
 

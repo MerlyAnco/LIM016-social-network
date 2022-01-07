@@ -80,6 +80,7 @@ export const template = (post) => {
         <div id="showComment${onePost.idP}"></div>
       </div>
     </div>
+    
     `;
 
     return nuevoElemento;
@@ -235,6 +236,9 @@ export const template = (post) => {
       const postId = e.target.parentNode.parentNode.parentNode.id;
       if (e.target.className === 'far fa-heart icon') {
         e.target.className = 'fas fa-heart icon';
+        console.log(postId);
+        console.log(uidUser);
+        console.log(nameUser);
         saveLike(postId, uidUser, nameUser);
         console.log('crea');
       } else {

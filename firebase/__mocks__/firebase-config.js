@@ -32,7 +32,13 @@ const auth = {
 // export const doc = jest.fn((db, collection, docId) => Promise.resolve({}));
 // export const db = {};
 
-const createUserWithEmailAndPassword = jest.fn(() => Promise.resolve());
+const createUserWithEmailAndPassword = jest.fn(() => Promise.resolve({
+  userCredential: {
+    user: {
+      emailVerified: true,
+    },
+  },
+}));
 const sendEmailVerification = jest.fn(() => Promise.resolve());
 const sendPasswordResetEmail = jest.fn(() => Promise.resolve());
 const signInWithEmailAndPassword = jest.fn(() => Promise.resolve());

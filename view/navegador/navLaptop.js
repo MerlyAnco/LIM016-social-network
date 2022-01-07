@@ -12,17 +12,16 @@ export const navLaptop = () => {
     </div>
     
     <div class="container-search">
-        <input type="text" class="search" id="search" placeholder="Search for people, tag, ..." autocomplete="off">
+        <input type="text" class="search" id="search" name="search" placeholder="Search for people, tag, ..." autocomplete="off">
     <div class="container-result-search" >
         <ul class="result-search" id="result-search" style="display:none"></ul>
     </div>        
     </div>
 
     <ul class="menuFull">
-      <li><a class="btnHome" href="#/home"><i class="fas fa-home"></i></a></li>
-      <li><a href="#/home"><i class="fas fa-bell"></i></a></li>
-      <li><a  class="btnProfile" href="#/home/profile/${userCurrent.uid}"><i class="fas fa-user-circle" id="myID" data-id="${userCurrent.uid}"></i></a></li>
-      <li><i id="out" class="fas fa-sign-out-alt"></i></li>
+      <li><a class="btnHome" href="#/home"><i class="fas fa-home" title="Home"></i></a></li>
+      <li><a  class="btnProfile" href="#/home/profile/${userCurrent.uid}"  title="Profile"><i class="fas fa-user-circle" id="myID" data-id="${userCurrent.uid}"></i></a></li>
+      <li><i id="out" class="fas fa-sign-out-alt"  title="Log Out"></i></li>
     </ul>
     `;
 

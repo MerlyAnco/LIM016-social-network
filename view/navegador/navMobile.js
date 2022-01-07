@@ -6,7 +6,7 @@ export const navMobile = () => {
   viewNavMobile.innerHTML = `
     <ul class="menu">
       <li><a class="btnHome1" href="#/home"><i class="fas fa-home"></i></a></li>
-      <li><a href="#/home"><i id="btn-search" class="fas fa-bell"></i></a></li>
+      <li><label for="search"><i id="btn-search" class="fas fa-search"></i></label></li>
       <li><span class = "btn-newPost-mobile"><i id="btn-post-mobile" class="fas fa-plus-circle"></i></span></li>
       <li><a class="btnProfile1" href="#/home/profile/${userCurrent.uid}"><i class="fas fa-user-circle" id="myID" data-id="${userCurrent.uid}"></i></a></li>
       <li><i id="logout-mob" class="fas fa-sign-out-alt"></i></li>

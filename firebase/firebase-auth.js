@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import {
   auth,
   signOut,
@@ -17,9 +18,7 @@ export const currentUser = () => auth;
 
 /* ----------------------------VISTA CON INICIO DE SESION - AUTH ---------------------------------*/
 /* .............SIGNUP.............. */
-export const createUser = (email, password) => {
-  createUserWithEmailAndPassword(auth, email, password);
-};
+export const createUser = (email, password) => createUserWithEmailAndPassword(auth, email, password);
 export const verificationEmail = () => sendEmailVerification(auth.currentUser);
 
 /* ........LOGIN PROVEEDORES....... */

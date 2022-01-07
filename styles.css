@@ -35,25 +35,27 @@ body::-webkit-scrollbar-thumb {
 /* ESTILO A LA VISTA 1*/
 #logoLogin {
     width: 300px;
+    margin-top: -12%;
 }
   #inicioLogo{
     display: flex;
     justify-content: center;
     flex-direction: column;
     margin: 15px auto;
+    font-family: 'Pushster', cursive;
 }
 .logo {
-    font-size: 30px;
-    font-family: sans-serif;
-    font-weight: 900;
+    font-weight: 100;
     color: white;
-    line-height : 20px;
+    line-height: 20px;
+    font-size: 38px;
 }
 #inicioLogo > i{
     color: white !important;
-    font-size: 18px;
+    font-size: 14px;
     align-self: flex-start;
-    margin-left: 5px;
+    margin-left: 13%;
+    margin-bottom: 0px;
 }
 #botonesLogin {
     justify-content: space-evenly;
@@ -273,12 +275,13 @@ p.errorMessage{
 
 @media (min-width: 769px){
     .logo {
-      font-size: 40px;
+        font-size: 50px;
+        font-family: 'Pushster', cursive;
     }
     #inicioLogo > i{
         font-size: 24px;
         padding-bottom: 5px;
-        margin-left: 3px;
+        margin-left: 11%;
     }
 }
 @media (min-width: 800px){
@@ -287,11 +290,11 @@ p.errorMessage{
         margin: 30px auto;
       }
 }
-@media (max-width: 290px){
+/* @media (max-width: 290px){
       .logo {
         font-size: 28px;
       }
       #inicioLogo > i{
         margin-left: 15px;
       }
-}
+} */

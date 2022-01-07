@@ -77,7 +77,7 @@ export const profileEdit = () => {
         <img class="img-prog" src="./img/python.png" name="python" title="Python">
         </div>
         <div class="interest-programming">
-        <img class="img-prog" src="./img/cpp.png" name="cpp" title="CPP">
+        <img class="img-prog" src="./img/cpp.png" name="c++" title="C++">
         </div>
         <div class="interest-programming">
         <img class="img-prog" src="./img/docker.png" name="docker" title="Docker">
@@ -119,6 +119,7 @@ export const FunctionEdit = () => {
 
   const arrayImg = document.querySelectorAll('.img-prog');
   arrayImg.forEach((interest) => {
+    console.log(interest);
     interest.addEventListener('click', () => {
       console.log(interest);
       const icoProgramming = interest.name;
@@ -141,7 +142,6 @@ export const FunctionEdit = () => {
       }
     });
   });
-  console.log(arrayInterest);
 
   (() => {
     obtenerInfo(user.uid).then((userInfo) => {
@@ -154,6 +154,11 @@ export const FunctionEdit = () => {
       const array1 = userInfo.data().interest;
       array1.forEach((e) => {
         arrayInterest.push(e);
+        arrayImg.forEach((interest) => {
+          if (interest.getAttribute('name') === e) {
+            interest.classList.add('activeProgramming');
+          }
+        });
       });
     });
   })();
@@ -214,7 +219,7 @@ export const FunctionEdit = () => {
     }));
   }
 
-  // ........................ foto de portada..........................
+  // ........................ foto de perfil..........................
   const fileEdit = document.getElementById('edit-file');
   let files = [];
   const readerEdit = new FileReader();

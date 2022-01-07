@@ -6,10 +6,15 @@ const auth = {
 
 const resetPasswordFirebase = jest.fn(() => Promise.resolve());
 
-const createUser = jest.fn(() => Promise.resolve({
-  userCredential: {
-    emailVerified: true,
-  },
+const createUser = jest.fn(() => new Promise((resolve, reject) => {
+  resolve({
+    userCredential: {
+      user: {
+        emailVerified: true,
+      },
+    },
+  });
+  reject(window.alert = jest.fn());
 }));
 
 const verificationEmail = jest.fn(() => Promise.resolve({
@@ -20,11 +25,11 @@ const verificationEmail = jest.fn(() => Promise.resolve({
   },
 }));
 
-// export const loginEmail = jest.fn(() => Promise.resolve({
-//   user: {
-//     emailVerified: true,
-//   },
-// }));
+export const loginEmail = jest.fn(() => Promise.resolve({
+  user: {
+    emailVerified: true,
+  },
+}));
 // export const loginGoogle = () => Promise.resolve();
 // export const loginFacebook = () => Promise.resolve();
 // export const loginGitHub = () => Promise.resolve();

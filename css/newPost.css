@@ -103,21 +103,29 @@
 /* -----OPTIONS POST----- */
 
 #selects{
-    width: 85px;
+    width: 90px;
     margin-left: auto;
 }
-.privacity, .type{
+select{
+    border-radius: 20px;
+    border: 1px solid black;
+    font-size: 15px;
+    font-family:"Outfit", sans-serif;
+}
+
+.privacityPost, .type{
     border-radius: 3px;
     border: 1px;
     border-color: rgb(87, 87, 87);
     background: #ffffffbf;
+
     padding: 1.5px;
     margin: 2.4px;
     width: 100%;
 }
 #selects option{
-    font-size: 12px;
-    padding: 3px;
+    font-size: 15px;
+    padding: 5px;
 }
 
 /* -----CONTENT COMMENT----- */

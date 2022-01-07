@@ -6,14 +6,17 @@
     padding-top: 3em;
 }
 
-#botones-types::-webkit-scrollbar {
+#botones-types::-webkit-scrollbar,
+#sectionUsers::-webkit-scrollbar{
     width: 10px;
   }
-  #botones-types::-webkit-scrollbar-track {
+  #botones-types::-webkit-scrollbar-track,
+  #sectionUsers::-webkit-scrollbar-track {
     border-radius: 10px;
     background-image: linear-gradient(to bottom, #e0f5ff 0%, #FFFFFF 100%);
   }
-  #botones-types::-webkit-scrollbar-thumb {
+  #botones-types::-webkit-scrollbar-thumb,
+  #sectionUsers::-webkit-scrollbar-thumb {
     background-image: linear-gradient(rgb(190, 189, 255) 0%, rgb(198, 252, 255) 100%);
     border-radius: 0px;
     -webkit-box-shadow: rgba(0,0,0,.12) 0 3px 13px 1px;
@@ -142,6 +145,8 @@
     order: -2;
 }
 
+#sectionUsers
+
 .container-info-users{
     /* position: fixed; */
     /* width: 23%; */
@@ -192,6 +197,7 @@
 .oneDivUser-parrafo {
     font-size: 14px;
     text-align: start !important;
+    text-transform: capitalize;
 }
 
 /* -----BUTTON FOR CREATE A NEW POST----- */
@@ -208,6 +214,7 @@
     margin-right: auto;
     margin-left: auto;
     cursor: pointer;
+    z-index:1
 }
 
 #btn-newPost:hover,
@@ -276,7 +283,7 @@
     border: transparent;
 } 
 .btn-type{
-    font-size: 15px;
+    font-size: 13px;
     /* font-weight: 700; */
     font-family: 'Outfit';
 }
@@ -318,7 +325,7 @@
 #sectionUsers{
     display: none;
     width: 100%;
-    height: 250px;
+    height: 200px;
     overflow: hidden;
     overflow-y: scroll;
 }
@@ -359,9 +366,51 @@
     padding: 0px 2.5%;
 }
 
+/*formato del loading*/
+#loader img,
+#loaderProfile img {
+    width: 10%;
+    margin-top:50%;
+  }
+  .loader {
+    /* background-image: linear-gradient(to bottom, #e0f5ff 0%, #FFFFFF 100%); */
+    backdrop-filter: blur(50px);
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: absolute;
+    /* top: 0; */
+    /* left: 0; */
+    z-index: 1;
+  }
+  
+  .loader2 {
+    transition: all 2s ease-in-out;
+    /* transform: scale(0); */
+    backdrop-filter: blur(0px);
+  }
+
+  .loader2 img{
+    width: 0%;
+  }
+
+  .loaderInfo{
+    height: 100vh !important;
+  }
+
+  .loaderPost{
+    width: 103% !important;
+    margin-left: -4px !important;
+    margin-top: -4px !important;
+  }
+
 @media (min-width: 768px){
     .container-home{
         padding-top: 7em;
+        padding-bottom: 0em;
+        
     }
     .section-home{
         flex-direction: row;
@@ -370,6 +419,7 @@
     #btn-newPost{
         display: block !important;
         width: 96%;
+        margin-bottom: 2%;
     }
     .header-home{
         display: flex;

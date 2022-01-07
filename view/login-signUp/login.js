@@ -21,7 +21,7 @@ export const Login = () => {
     <div class="formulario">
       <div id="inicioLogo"> 
         <i class="fas fa-crown inicio"></i>
-        <p class="logo">QUEEN CODERS</p>
+        <p class="logo">Queen Coders</p>
       </div>
       <div><img id="logoLogin" class="imgInicioPequeño" name="imgInicioPequeño"></div>
 
@@ -65,7 +65,23 @@ export const Login = () => {
         </div>
       </form>
     </div>
-  </section>`;
+  </section>
+  <section class="modalDelete" style="display: none">
+  <div class="modalDivDelete">
+    <div class="modalContainer-Delete">
+      <div>
+      </div>
+      <div>
+        <h1>Correo de Verificación</h1>
+        <div class="modal-parrafo">
+        Te enviamos un correo para verificar tu cuenta. Por favor, revisa tu bandeja
+        </div>
+        <button class="aceptDelete">Ok</button>
+      </div>
+    </div>
+  </div>
+</section>
+  `;
 
   return viewHome;
 };
@@ -75,16 +91,12 @@ function errorOccurs(typeError, text) {
   const textMessage = text;
   switch (errorCode) {
     case 'auth/user-not-found':
-      textMessage.innerHTML = 'Usuario no encontrado';
-      break;
     case 'auth/wrong-password':
-      textMessage.innerHTML = 'Contraseña incorrecta.';
+    case 'auth/invalid-email':
+      textMessage.innerHTML = 'La dirección de correo electrónico o la contraseña no es válida.';
       break;
     case 'auth/too-many-requests':
       textMessage.innerHTML = 'Usted excedió el número de intentos fallidos. Reestablezca su contraseña o inténtelo más tarde.';
-      break;
-    case 'auth/invalid-email':
-      textMessage.innerHTML = 'La dirección de correo electrónico no es válida';
       break;
     case 'auth/account-exists-with-different-credential':
       textMessage.innerHTML = 'La dirección de correo electrónico ya es usada en una credencial diferente.';
@@ -110,9 +122,10 @@ export const handleSubmit = (e) => {
           window.location.hash = '#/home';
         });
       } else {
-        alert(
-          'Te hemos enviado un email para verificar tu cuenta. Por favor revisa tu bandeja.',
-        );
+        document.querySelector('.modalDelete').classList.add('revelar');
+        document.querySelector('.aceptDelete').addEventListener('click', () => {
+          document.querySelector('.modalDelete').classList.remove('revelar');
+        });
       }
     })
     .catch((error) => {
@@ -135,6 +148,7 @@ export const initLogin = () => {
     loginGoogle()
       .then(() => verificarUsuario())
       .then((user) => {
+        console.log(user);
         localStorage.setItem('user', JSON.stringify(user));
         window.location.hash = '#/home';
       })
@@ -144,24 +158,13 @@ export const initLogin = () => {
       });
   });
 
-  /* .......Logearse con Facebook........ */
-  // facebookLogin.addEventListener('click', () => {
-  //   loginFacebook()
-  //     .then(() => verificarUsuario())
-  //     .then(() => {
-  //       window.location.hash = '#/home';
-  //     })
-  //     .catch((error) => {
-  //       const message = document.getElementById('generalMessage');
-  //       errorOccurs(error, message);
-  //     });
-  // });
-
   /* .......Logearse con GitHub........ */
   githubLogin.addEventListener('click', () => {
     loginGitHub()
       .then(() => verificarUsuario())
-      .then(() => {
+      .then((user) => {
+        console.log(user);
+        localStorage.setItem('user', JSON.stringify(user));
         window.location.hash = '#/home';
       }).catch((error) => {
         const message = document.getElementById('generalMessage');

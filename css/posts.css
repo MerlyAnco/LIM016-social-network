@@ -31,6 +31,7 @@
     height: 48px;
     border-radius: 50%;
     border: 3px solid white;
+    margin-top: -4%;
 }
 .header-info{
     display: flex;
@@ -45,6 +46,8 @@
     text-align: start !important;
     margin: 5px 0;
     cursor: pointer;
+    text-transform: capitalize;
+    font-weight: 600;
 }
 .date{
     font-size: 12px;
@@ -56,8 +59,9 @@
 .img-post-home{
     width: 100%;
     object-fit: fill;
-    height: 180px;
+    height: auto;
     padding: 4px;
+    border-radius: 10px;
 }
 
 .text-post-home{
@@ -159,7 +163,7 @@
 
 /* -----DELETE POST MODAL----- */
 
-.modalDelete{
+.modalDelete , .modalDelete2{
     width: 100%;
     min-height: 100vh;
     background-color: rgba(44, 44, 44, 0.371);
@@ -171,7 +175,7 @@
     align-items: center;
 }
 
-.modalDivDelete{
+.modalDivDelete, .modalDivDelete2{
     display: flex;
     /* flex-direction: column; */
     justify-content: center;
@@ -179,7 +183,7 @@
     align-items: center;
 }
 
-.modalContainer-Delete{
+.modalContainer-Delete , .modalContainer-Delete2{
     display: flex;
     flex-direction: column;
     background-image: linear-gradient(to bottom, #bebdff 0%, #c6fcff 100%);
@@ -189,19 +193,19 @@
     box-shadow: 0px 0px 6px 3px #46464673;
 }
 
-#closeDelete{
+#closeDelete , #closeDelete2{
     text-align: end !important;
     margin: 7px 13px;
     font-size: 20px;
 }
 
-.modalContainer-Delete h1{
+.modalContainer-Delete h1 , .modalContainer-Delete2 h1{
     border-bottom: 1px solid #adadad;
     border-radius: 9px;
     padding-bottom: 6px;
     margin-bottom: 9px;
 }
-.aceptDelete{
+.aceptDelete , .aceptDelete2{
     height: 40px;
     width: 146px;
     border-radius: 15px;
@@ -271,6 +275,8 @@
 .solo yo{
     
 }
+
+
 @media (min-width: 768px){
     .img-post-home{
         height: auto;
