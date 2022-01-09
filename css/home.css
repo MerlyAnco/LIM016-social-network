@@ -397,13 +397,23 @@
   }
 
   .loaderInfo{
-    height: 100vh !important;
+    height: 100% !important;
+    width: 98% !important;
   }
 
   .loaderPost{
-    width: 103% !important;
-    margin-left: -4px !important;
-    margin-top: -4px !important;
+    width: 98% !important;
+    margin: -4px 1% !important;
+/*     margin-left: -4px !important;
+    margin-top: -4px !important; */
+  }
+
+  .loaderPostHome{
+    width: 100% !important;
+    top: -4px;
+    /* margin: -4px 1% !important; */
+/*     margin-left: -4px !important;
+    margin-top: -4px !important; */
   }
 
 @media (min-width: 768px){
@@ -448,6 +458,8 @@
         display: block;
         overflow-x: hidden;
         overflow-y: scroll;
+        height: 26vh
+        ;
     }
     .sectionTypes{
         width: 23%;

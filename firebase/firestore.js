@@ -129,6 +129,7 @@ export const updatePost = (id, postEdit) => {
 // /* ----------------- LIKES ----------------- */
 export const saveLike = (id, userId) => setDoc(doc(db, 'post', id, 'likes', userId), {
   date: Date.now(),
+  userLike: userId,
 });
 
 let unsubscribeLikes;
@@ -139,7 +140,7 @@ export const readLikes = (callback, id) => {
       const likes = [];
       querySnapshot.forEach((docC) => {
         const objectLikes = { };
-        objectLikes.user = docC.data().user;
+        objectLikes.userLike = docC.data().userLike;
         objectLikes.date = docC.data().date;
         likes.push(objectLikes);
       });

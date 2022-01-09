@@ -4,9 +4,12 @@
     width: 100%;
     /* margin: 0px 4%; */
 }
-#showPost, #PostProfile{
+#showPost{
     margin: 0px 2.5%;
     /* width: 95%; */
+}
+#PostProfile{
+    padding: 0px 2.5%;
 }
 
 /* -----INF OF PUBLICATION----- */

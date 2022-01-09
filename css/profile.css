@@ -147,6 +147,9 @@
     margin: 1em;
     font-size: 18px;
 }
+#postContainer{
+    width: auto;
+}
 
 @media (min-width: 768px){
     .container-profile{

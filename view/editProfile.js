@@ -282,14 +282,18 @@ export const FunctionEdit = () => {
     e.preventDefault();
     // eslint-disable-next-line max-len
     if (fileEdit.files[0]) {
+      document.getElementById('loaderEdit').style.display = 'block';
       updateInfoUser(user.uid, newAbout.value, newName.value, newPhoto.src, newPortada.src, newCareer.value, arrayInterest)
         .then(() => {
+          document.getElementById('loaderEdit').style.display = 'block';
           window.location.reload();
         });
     } else {
-    // eslint-disable-next-line max-len
+      // eslint-disable-next-line max-len
+      document.getElementById('loaderEdit').style.display = 'block';
       updateInfoUser(user.uid, newAbout.value, newName.value, newPhoto.src, newPortada.src, newCareer.value, arrayInterest)
         .then(() => {
+          document.getElementById('loaderEdit').style.display = 'block';
           window.location.reload();
         });
     }

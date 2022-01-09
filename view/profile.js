@@ -74,7 +74,7 @@ export const Profile = () => {
     </div>
     <section id="post-section" class="container-postProfile">
       <button id="btn-newPost" style="display:none"> Add New Post </button>
-      <div style="position: relative;">
+      <div id ="postContainer" style="position: relative;">
     <div class="lds-roller loader loaderPost" id="loader"><img src="./img/loader.gif"></div>
       <div id="PostProfile"></div>
       </div>
@@ -83,15 +83,18 @@ export const Profile = () => {
 
   <section class="modalEditProfile" style="display:none">
     <div class="modalDiv-editProf">
-    <div class="modalContainer-edit">
-    </div>
+      <div class="modalContainer-edit">
+        <div class="lds-roller loader loaderEdit" id="loaderEdit"><img src="./img/loader.gif"></div>
+      </div>
     </div>
   </section>
+
   <section class="modalNewPost" style="display: none">
-      <div class="modalDivPost">
+    <div class="modalDivPost">
       <div class="modalContainer-NewPost">
+        <div class="lds-roller loader loaderNewPost" id="loaderNewPost"><img src="./img/loader.gif"></div>
       </div>
-      </div>
+    </div>
   </section>
     `;
 
@@ -108,6 +111,7 @@ export const FunctionProfile = () => {
     leerPostProfile(showPostProfile, idUserRedirect);
 
     document.getElementById('goEdit').style.display = 'block';
+    document.getElementById('loaderNewPost').style.display = 'none';
     // document.querySelector('.modalDelete').classList.remove('revelar');
   } else {
     document.getElementById('goEdit').style.display = 'none';
@@ -152,6 +156,7 @@ export const FunctionProfile = () => {
     }).then(() => { document.getElementById('loaderProfile').style.display = 'none'; });
 
   document.getElementById('goEdit').addEventListener('click', () => {
+    document.getElementById('loaderEdit').style.display = 'none';
     profileEdit();
     document.querySelector('.modalEditProfile').style.display = 'flex';
     FunctionEdit();

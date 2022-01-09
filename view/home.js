@@ -55,7 +55,7 @@ export const Home = () => {
   <div class="div-showPost">
     <button id="btn-newPost" style="display:none"> Add new post </button>
     <div style="position: relative;">
-    <div class="lds-roller loader loaderPost" id="loader"><img src="./img/loader.gif"></div>
+    <div class="lds-roller loader loaderPostHome" id="loader"><img src="./img/loader.gif"></div>
     <div id="showPost"></div>
     </div>
   </div>

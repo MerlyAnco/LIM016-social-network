@@ -14,7 +14,7 @@ export const templateComents = (comments, id) => {
         <img  id="photo-profile" src="${dataUser.data().photo}" width="24px">
         <div class="name-comment">${dataUser.data().name}</div>
 
-        <div class="icon-options">
+        <div class="icon-options options-comment">
           <ion-icon name="ellipsis-vertical-outline"></ion-icon>
         </div>
       </div>

@@ -122,6 +122,7 @@ export const functionNewPost = () => {
     document.getElementById('delete-imgUpload').style.display = 'block';
   };
   const postDescription = document.getElementById('post-description');
+
   document.querySelector('.publish').addEventListener('click', () => {
     if (
       (postDescription.value !== '' && photoFile.files[0])

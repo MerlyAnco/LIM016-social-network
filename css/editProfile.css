@@ -23,6 +23,22 @@
     margin: 0px auto;
 }
 
+.loaderEdit{
+    display: flex;
+    width: 100vw;
+    min-height: 687px!important;
+    height: auto;
+    backdrop-filter: blur(50px);
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+.loaderEdit img{
+    width: 10%;
+    margin-top: 60%;
+    z-index: 3;
+}
+
 .form-editProfile{
     display: flex;
     flex-direction: column;
@@ -172,11 +188,15 @@ textarea:focus{
     width: 100%;
 }
 
-.activeProgramming,
-.interest-programming > img:hover{
+.activeProgramming {
     box-shadow: 0px 0px 4px 1px #8b8b8bb8;
     border-radius: 4px;
 }
+/* .activeProgramming,
+.interest-programming >img:hover {
+    box-shadow: 0px 0px 4px 1px #8b8b8bb8;
+    border-radius: 4px;
+} */
 
 #resetForm{
     height: 40px;
@@ -221,7 +241,6 @@ textarea:focus{
     display: grid !important;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     width: 100%;
-    
 }
 
 @media (min-width: 768px){
@@ -229,8 +248,14 @@ textarea:focus{
         width: 500px;
         height: auto;
     }
+    .loaderEdit{
+        width: 500px;
+    }
     #portadaUserEdit{
         height: 100%;
     }
-
+    .activeProgramming, .interest-programming >img:hover {
+    box-shadow: 0px 0px 4px 1px #8b8b8bb8;
+    border-radius: 4px;
+}
 }

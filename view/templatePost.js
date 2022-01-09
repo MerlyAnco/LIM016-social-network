@@ -95,10 +95,11 @@ export const template = (post) => {
     readLikes((likes) => {
       const num = likes.length;
       parrafoCountLikes.innerHTML = num;
-      const arr = likes.filter((like) => like.user === user.displayName);
-      if (arr.length >= 1) {
-        iconLikes.className = 'fas fa-heart icon';
-      }
+      likes.forEach((like) => {
+        if (like.userLike === uidUser) {
+          iconLikes.className = 'fas fa-heart icon';
+        }
+      });
     }, idPost);
 
     const parrafoCountComment = nuevoElemento.querySelector(

@@ -115,6 +115,8 @@ export const showPostProfile = (post) => {
     });
   });
 
+  const uidUser = user.uid;
+
   post.forEach((one) => {
     const idPost = one.postID;
     const iconLikes = sectionPostProfile.querySelector(`#iconLikes${idPost}`);
@@ -122,10 +124,11 @@ export const showPostProfile = (post) => {
     readLikes((likes) => {
       const num = likes.length;
       parrafoCountLikes.innerHTML = num;
-      const arr = likes.filter((like) => like.user === user.displayName);
-      if (arr.length >= 1) {
-        iconLikes.className = 'fas fa-heart icon';
-      }
+      likes.forEach((like) => {
+        if (like.userLike === uidUser) {
+          iconLikes.className = 'fas fa-heart icon';
+        }
+      });
     }, idPost);
 
     const parrafoCountComment = sectionPostProfile.querySelector(`.countComment${idPost}`);
@@ -223,7 +226,6 @@ export const showPostProfile = (post) => {
     });
   });
 
-  const uidUser = user.uid;
   const nameUser = user.displayName;
   sectionPostProfile.querySelectorAll('.fa-heart').forEach((like) => {
     like.addEventListener('click', (e) => {
