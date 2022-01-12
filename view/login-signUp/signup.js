@@ -64,7 +64,7 @@ export const SignUp = () => {
         <button type="button" class="icon-login" id="githubLogin"><img src="img/github.png"></button>
 
         <div class="textResetPassword">
-          <p class="registerText">Do you have an account?  <a href="#/signup" class="registerText link">Login now</a></p>
+          <p class="registerText">Do you have an account?  <a href="#/login" class="registerText link">Login now</a></p>
         </div>
       </form>
     </div>

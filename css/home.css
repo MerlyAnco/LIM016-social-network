@@ -397,7 +397,7 @@
   }
 
   .loaderInfo{
-    height: 100% !important;
+    height: 100vh !important;
     width: 98% !important;
   }
 

@@ -21,10 +21,10 @@ export const verificarUsuario = async function verificarSiExisteUsuario() {
         photo:
           'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMcsPTHZ91k7dc7VsbRYTe7M5KHLtydC2M0iQUzNh2YG-C_6kBkroerXsVVW9c_CpYmVU&usqp=CAU',
         userUID: userID,
-        about: 'Escribe una frase con la que te identifiques',
+        about: 'Write a phrase that describes you!',
         portada:
           'https://media.istockphoto.com/vectors/the-future-is-female-vector-illustration-stylish-print-for-t-shirts-vector-id1206930173',
-        career: 'Cuentanos a que te dedicas',
+        career: 'Tell us what do you do',
         interest: ['html', 'css', 'javascript'],
       });
     } else {
@@ -33,10 +33,10 @@ export const verificarUsuario = async function verificarSiExisteUsuario() {
         photo:
           'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMcsPTHZ91k7dc7VsbRYTe7M5KHLtydC2M0iQUzNh2YG-C_6kBkroerXsVVW9c_CpYmVU&usqp=CAU',
         userUID: userID,
-        about: 'Escribe una frase con la que te identifiques',
+        about: 'Write a phrase that describes you!',
         portada:
           'https://static-cse.canva.com/blob/706582/1600w-dzsSYIjyvws.jpg',
-        career: 'Cuentanos a que te dedicas',
+        career: 'Tell us what do you do',
         interest: ['html', 'css', 'javascript'],
       });
     }
@@ -45,9 +45,9 @@ export const verificarUsuario = async function verificarSiExisteUsuario() {
       name: nameUser,
       photo: userCurrent.photoURL,
       userUID: userCurrent.uid,
-      about: 'Escribe una frase con la que te identifiques',
+      about: 'Write a phrase that describes you!',
       portada: 'https://static-cse.canva.com/blob/706582/1600w-dzsSYIjyvws.jpg',
-      career: 'Cuentanos a que te dedicas',
+      career: 'Tell us what do you do',
       interest: ['html', 'css', 'javascript'],
     });
     console.log('No existe');

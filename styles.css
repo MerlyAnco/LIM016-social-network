@@ -35,7 +35,13 @@ body::-webkit-scrollbar-thumb {
 /* ESTILO A LA VISTA 1*/
 #logoLogin {
     width: 300px;
-    margin-top: -12%;
+    margin-top: -2%;
+    margin-bottom: -14%;
+}
+#logoReset{
+    width: 195px;
+    margin-top: 0%;
+    margin-bottom: 0%;
 }
   #inicioLogo{
     display: flex;

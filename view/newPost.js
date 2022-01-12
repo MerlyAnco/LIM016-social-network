@@ -46,11 +46,8 @@ export const newPost = () => {
     <div class="add-element">
       <div class="plus-image"><b>+</b></div>
       <div class="addImage">
-        <button class= "addImg"><ion-icon name="image-outline"></ion-icon></ion-icon></button>
+        <button class= "addImg" style="cursor: pointer;"><ion-icon name="image-outline"></ion-icon></ion-icon></button>
         <input type="file" id="input-file" style="display:none" multiple/>
-        <button class= "add camara"><ion-icon name="camera-outline"></ion-icon></button>
-        <button class= "add video"><ion-icon name="videocam-outline"></ion-icon></button>
-        <button class= "add archive"><ion-icon name="attach-outline"></ion-icon></button>
       </div>
     </div>
 

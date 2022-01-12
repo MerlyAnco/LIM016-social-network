@@ -12,7 +12,7 @@ export const navLaptop = () => {
     </div>
     
     <div class="container-search">
-        <input type="text" class="search" id="search" name="search" placeholder="Search for people, tag, ..." autocomplete="off">
+        <input type="text" class="search" id="search" name="search" placeholder="Search for people" autocomplete="off">
     <div class="container-result-search" >
         <ul class="result-search" id="result-search" style="display:none"></ul>
     </div>        

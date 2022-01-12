@@ -4,8 +4,11 @@ export const resetPassword = () => {
   const viewResetPassword = document.createElement('div');
   viewResetPassword.classList.add('viewReset');
   viewResetPassword.innerHTML = `
-    <div class="logo">SOCIAL NETWORK</div>
-    <div><img id="logoLogin" src='./img/lock.png' style="width:195px"></div>
+  <div id="inicioLogo" class="logoReset"> 
+  <i class="fas fa-crown inicio"></i>
+  <p class="logo">Queen Coders</p>
+  </div>
+    <div><img id="logoReset" src='./img/lock.png' style="width:195px"></div>
     
     <form id="resetPasswordBtn">
       <div class= "textReset" style="font-size: 22px;">¿Tienes problemas para iniciar sesión?</div>

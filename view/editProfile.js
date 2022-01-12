@@ -37,20 +37,20 @@ export const profileEdit = () => {
 
     <div class="form-group">
     <ion-icon name="person-outline"></ion-icon>
-    <label for="edit-name">Edita tu Nombre</label>
+    <label for="edit-name">Edit you Name</label>
     <input type="text" id="edit-name" name="edit-name"  placeholder="Name" >
     </div>
     <div class="form-group">
     <ion-icon name="briefcase-outline"></ion-icon>
-    <label for="edit-career">Edita tu Ocupación</label>
+    <label for="edit-career">Edit your occupation</label>
     <input type="text" id="edit-career"  name="edit-career" placeholder="Ocupation" >
     </div>
     <div class="form-group">
-    <label for="edit-about">Edita tu about</label>
-    <textarea  id="edit-about" name="edit-about" row="3" placeholder="¡Cuentanos más sobre ti, o escribe una frase que te describe!" ></textarea>
+    <label for="edit-about">Edit your about</label>
+    <textarea  id="edit-about" name="edit-about" row="3" placeholder="Tell us more about you, or write a phrase that describes you!" ></textarea>
     </div>
     <div class="form-group icons-programming">
-      <label for="edit-about">Edita tus intereses <span>(máx 6 items)</span></label>
+      <label for="edit-about">Edit your interest<span>(máx 6 items)</span></label>
       <div class="img-programming">
         <div class="interest-programming">
         <img class="img-prog" src="./img/html.png" name="html" title="Html">
@@ -97,7 +97,7 @@ export const profileEdit = () => {
       </div>
     </div>
     <div class="btns-editProfile">
-    <input type="reset" id="resetForm" value="Borrar"/>
+    <input type="reset" id="resetForm" value="Delete"/>
     <button id="btn-edit">Save</button>
     </div>
     </div>
